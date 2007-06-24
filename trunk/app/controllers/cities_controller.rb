@@ -1,4 +1,8 @@
 class CitiesController < ApplicationController
+  def title_prefix
+    "City"
+  end
+
   def index
     list
     render :action => 'list'

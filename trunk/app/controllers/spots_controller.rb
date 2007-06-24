@@ -1,4 +1,8 @@
 class SpotsController < ApplicationController
+  def title_prefix
+    "Spots"
+  end
+
   def index
     list
     render :action => 'list'

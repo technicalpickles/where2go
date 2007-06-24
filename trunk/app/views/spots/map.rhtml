@@ -13,7 +13,7 @@ window.onload = addCodeToFunction(window.onload,function() {
     Hub: <%= text_field_tag :hubaddress, "13 Magazine St. Cambridge, MA 02139", {:size => 60} %>
     <%= submit_tag "Recenter" %>
 </form>
-<%= form_remote_tag :url => {:controller => "spot", :action => 'queryjs'}, :html => {:id => "mainform"} %>
+<%= form_remote_tag :url => {:controller => "spots", :action => 'queryjs'}, :html => {:id => "mainform"} %>
 <table>
   <tr>
     <td rowspan="2">

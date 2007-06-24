@@ -271,16 +271,18 @@ var Spots = {
 
 var Spot = Class.create();
 Spot.prototype = {
-  initialize: function(dbid, externalid, name, address, opensat, closesat, link, spottype, description, longitude, latitude) {
+  initialize: function(dbid, externalid, name, address, phone, opensat, closesat, link, spottype, description, distance, longitude, latitude) {
     this.dbid = dbid;
     this.externalid = externalid;
     this.name = name;
     this.address = address;
+    this.phone = phone;
     this.opensat = opensat;
     this.closesat = closesat;
     this.link = link;
     this.spottype = spottype;
     this.description = description;
+    this.distance = distance;
     this.longitude = longitude;
     this.latitude = latitude;
     
@@ -295,7 +297,7 @@ Spot.prototype = {
 
   showBubble: function() {
     Spots.currentSpot = this.seqnum;
-    this.marker.openInfoWindowHtml(this.address+"<br/><a href='#' onclick='Spots.showDescription("+this.seqnum+");return false'>Description</a>");
+    this.marker.openInfoWindowHtml(this.address+"&nbsp;&nbsp;-&nbsp;&nbsp;"+this.phone+"<br/><a href='#' onclick='Spots.showDescription("+this.seqnum+");return false'>Description</a>");
   },
 
   showDescription: function() {
@@ -358,9 +360,9 @@ Spot.prototype = {
                             {className: "markercode marker_"+this.typecode,
                              onclick: "return Spots.showBubble("+this.seqnum+");return false"},
                             this.seqnum);
-    var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address}, this.price);
+    var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address}, this.name);
     var name = Builder.node("td", {className: "name"}, [link]);
-    var distance = Builder.node("td", {className: "distance"}, Math.round(this.distance));
+    var distance = Builder.node("td", {className: "distance"}, this.distance);
     var opensat = Builder.node("td", {className: "opensat"}, this.opensat);
     var closesat = Builder.node("td", {className: "closesat"}, this.closesat);
 

@@ -1,0 +1,8 @@
+#summary The format we use to communicate from the server to the client.
+
+= Possibilities =
+
+  * XML
+  * JSON
+  * JavaScript constructor calls
+

@@ -227,3 +227,123 @@ md23:
   city_id: 1
   address: 301 WARREN ST, ROXBURY, MA 02119 	
   phone: unknown
+sb1:
+  id: 39
+  name: Starbucks
+  city_id: 1
+  address: 63-65 Court Street, Boston, MA 02108
+  phone: unknown
+sb2:
+  id: 40
+  name: Starbucks
+  city_id: 1
+  address: 84 State Street, Boston, MA 02109
+  phone: unknown
+sb3:
+  id: 41
+  name: Starbucks
+  city_id: 1
+  address: 27 School Street, Boston, MA 02106
+  phone: unknown
+sb4:
+  id: 42
+  name: Starbucks
+  city_id: 1
+  address: 1 Federal Street, Boston, MA 02110
+  phone: unknown
+sb5:
+  id: 43
+  name: Starbucks
+  city_id: 1
+  address: 240 Washington St., Boston, MA 02106
+  phone: unknown
+sb6:
+  id: 44
+  name: Starbucks
+  city_id: 1
+  address: 2-4 Faneuil Hall Market Place, Boston, MA 02101
+  phone: unknown
+sb7:
+  id: 45
+  name: Starbucks
+  city_id: 1
+  address: 1 International Place, Boston, MA 02110
+  phone: unknown
+sb8:
+  id: 46
+  name: Starbucks
+  city_id: 1
+  address: 211 Congress Street, Boston, MA 02110
+  phone: unknown
+sb9:
+  id: 47
+  name: Starbucks
+  city_id: 1
+  address: 296 State St, Boston, MA 02109
+  phone: unknown
+sb10:
+  id: 48
+  name: Starbucks
+  city_id: 1
+  address: 12 Winter Street, Boston, MA 02106
+  phone: unknown
+sb11:
+  id: 49
+  name: Starbucks
+  city_id: 1
+  address: 125 Summer Street, Boston, MA 02110
+  phone: unknown
+sb12:
+  id: 50
+  name: Starbucks
+  city_id: 1
+  address: 75-101 Federal Street, Boston, MA 02110
+  phone: unknown
+sb13:
+  id: 51
+  name: Starbucks
+  city_id: 1
+  address: 1 Financial Center, Boston, MA 02111
+  phone: unknown
+sb14:
+  id: 52
+  name: Starbucks
+  city_id: 1
+  address: 2 Atlantic Avenue, Boston, MA 02110
+  phone: unknown
+sb15:
+  id: 53
+  name: Starbucks
+  city_id: 1
+  address: 222 Cambridge Street, Boston, MA 02114
+  phone: unknown
+sb16:
+  id: 54
+  name: Starbucks
+  city_id: 1
+  address: 62 Boylston Street, Boston, MA 02116
+  phone: unknown
+sb17:
+  id: 55
+  name: Starbucks
+  city_id: 1
+  address: 601 Congress St, Boston, MA 02210
+  phone: unknown
+sb18:
+  id: 56
+  name: Starbucks
+  city_id: 1
+  address: 1 Charles Street, Boston, MA 02108
+  phone: unknown
+sb19:
+  id: 57
+  name: Starbucks
+  city_id: 1
+  address: 97 Charles Street, Boston, MA 02114
+  phone: unknown
+sb20:
+  id: 58
+  name: Starbucks
+  city_id: 1
+  address: 143 Stuart Street, Boston, MA 02116
+  phone: unknown

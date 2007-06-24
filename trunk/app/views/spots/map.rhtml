@@ -18,18 +18,18 @@ window.onload = addCodeToFunction(window.onload,function() {
   <tr>
     <td rowspan="2">
     <%= select_tag "spottype[]", options_for_select(
-[['Condo', 'C'], ['Single Family', 'S'], ['Multi Family', 'M']], [ 'S' ] ), {:multiple => true, :size => 3} %>
+[['Restaurant', 'R'], ['Bar', 'B'], ['Store', 'S']], [ 'R' ] ), {:multiple => true, :size => 3} %>
     </td>
-    <th>Min Beds</th>
-    <th>Min SqFt</th>
-    <th>Max Price</th>
+    <th>Open Before</th>
+    <th>Open After</th>
+    <th>Name</th>
     <th>How Many</th>
     <th>&nbsp;</th>
     </tr>
     <tr>
-    <td><%= text_field_tag :minbedrooms, "3", {:size => 2} %></td>
-    <td><%= text_field_tag :minsqft, "1200", {:size => 5} %></td>
-    <td><%= text_field_tag :maxprice, "700000", {:size => 9} %></td>
+    <td><%= text_field_tag :openbefore, "", {:size => 5} %></td>
+    <td><%= text_field_tag :openafter, "", {:size => 5} %></td>
+    <td><%= text_field_tag :name, "", {:size => 9} %></td>
     <td><%= text_field_tag :nearesthowmany, "10", {:size => 3} %></td>
     <td>
 <%= hidden_field_tag :hublat, "42.400245" %>
@@ -43,21 +43,17 @@ window.onload = addCodeToFunction(window.onload,function() {
     <div id="map" style="width: 700px; height: 700px; float: left;"></div>
     <div id="message"></div>
     <div id="resultsdiv">
-<%= hidden_field_tag :sortcolumn, "priceint" %>
+<%= hidden_field_tag :sortcolumn, "distance" %>
 <%= hidden_field_tag :sortdirection, "ascending" %>
 <div id="sortingindicator" style="display:none">Sorting...</div>
     <table id="results" cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
           <th id="col_seqnum">T</th>
-          <th id="col_priceint">Price</th>
-          <th id="col_sqft">SqFt</th>
-          <th id="col_dolpersqft">$/sf</th>
-          <th id="col_bedrooms">Bd</th>
-          <th id="col_bathrooms">Bth</th>
-          <th id="col_bathroomshalf">Hlf</th>
-          <th id="col_ohstarttime">Start</th>
-          <th id="col_ohendtime">End</th>
+          <th id="col_name">Name</th>
+          <th id="col_distance">Distance</th>
+          <th id="col_opensat">Opens</th>
+          <th id="col_closesat">Closes</th>
         </tr>
       </thead>
       <tbody id="resultsbody">

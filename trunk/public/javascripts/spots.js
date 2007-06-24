@@ -9,11 +9,10 @@ var Spots = {
   map: "",
   geocoder: "",
   data: [],
-  allProperties: [],
+  allSpots: [],
   hubpoint: new GLatLng(42.364434,-71.104696),
   hubMarker: "",
   baseIcon: "",
-  blankImage: new Image(),
   currentSpot: "",
 
   initialize: function() {
@@ -40,63 +39,52 @@ var Spots = {
     Spots.initTooltips();
   },
 
-  addSpot: function(prop) {
-    Spots.allProperties.push(prop);
-    prop.seqnum = Spots.allProperties.length;
+  addSpot: function(spot) {
+    Spots.allSpots.push(spot);
+    spot.seqnum = Spots.allSpots.length;
   },
 
   update: function() {
     Spots.map.clearOverlays();
     Spots.setupHubMarker();
 
-    if (Spots.allProperties.length == 0) {
+    if (Spots.allSpots.length == 0) {
       $("resultsbody").innerHTML = "<tr><td colspan='9' align='center'>Nothing Found!</td></tr>";
     } else {
       $("resultsbody").remove();
       $("results").appendChild(Builder.node("tbody", {id: "resultsbody"}));
       var seqnum = 0;
-      var ordered = Spots.allProperties.sortBy(Spots.sortFunc);
+      var ordered = Spots.allSpots.sortBy(Spots.sortFunc);
 
-      ordered.each( function(prop) {
-                      prop.addToMap(Spots.map);
-                      prop.addToResults();
+      ordered.each( function(spot) {
+                      spot.addToMap(Spots.map);
+                      spot.addToResults();
                     } );
     }
 
   },
 
-  findSpotByFullID: function(fullid) {
-    var item = Spots.allProperties.find( function(prop) {
-                                           return prop.listingfullid == fullid;
+  findSpotByExternalID: function(id) {
+    var item = Spots.allSpots.find( function(spot) {
+                                           return spot.externalid == id;
                                          } );
     return item;
   },
   findSpotByDBID: function(dbid) {
-    var item = Spots.allProperties.find( function(prop) {
-                                           return prop.dbid == dbid;
+    var item = Spots.allSpots.find( function(spot) {
+                                           return spot.dbid == dbid;
                                          } );
     return item;
   },
   findSpotBySeqnum: function(seqnum) {
-    var item = Spots.allProperties.find( function(prop) {
-                                           return prop.seqnum == seqnum;
+    var item = Spots.allSpots.find( function(spot) {
+                                           return spot.seqnum == seqnum;
                                          } );
     return item;
   },
 
-  prevImage: function() {
-    Spots.findSpotBySeqnum(Spots.currentSpot).prevImage();
-  },
-  nextImage: function() {
-    Spots.findSpotBySeqnum(Spots.currentSpot).nextImage();
-  },
-
   showBubble: function(seqnum) {
     Spots.findSpotBySeqnum(seqnum).showBubble();
-  },
-
-  showImages: function(seqnum) {
-    Spots.findSpotBySeqnum(seqnum).showImages();
   },
 
   showDescription: function(seqnum) {
@@ -240,44 +228,24 @@ var Spots = {
   },
 
   beh: {
-    'table#results th#col_priceint' : function(el) {
+    'table#results th#col_name' : function(el) {
       el.onclick = function() {
-	Spots.reSort("priceint");
+	Spots.reSort("name");
       }
     },
-    'table#results th#col_sqft' : function(el) {
+    'table#results th#col_distance' : function(el) {
       el.onclick = function() {
-	Spots.reSort("sqft");
+	Spots.reSort("distance");
       }
     },
-    'table#results th#col_dolpersqft' : function(el) {
+    'table#results th#col_opensat' : function(el) {
       el.onclick = function() {
-	Spots.reSort("dolpersqft");
+	Spots.reSort("opensat");
       }
     },
-    'table#results th#col_bedrooms' : function(el) {
+    'table#results th#col_closesat' : function(el) {
       el.onclick = function() {
-	Spots.reSort("bedrooms");
-      }
-    },
-    'table#results th#col_bathrooms' : function(el) {
-      el.onclick = function() {
-	Spots.reSort("bathrooms");
-      }
-    },
-    'table#results th#col_bathroomshalf' : function(el) {
-      el.onclick = function() {
-	Spots.reSort("bathroomshalf");
-      }
-    },
-    'table#results th#col_ohstarttime' : function(el) {
-      el.onclick = function() {
-	Spots.reSort("ohstarttime");
-      }
-    },
-    'table#results th#col_ohendtime' : function(el) {
-      el.onclick = function() {
-	Spots.reSort("ohendtime");
+	Spots.reSort("closesat");
       }
     },
     'table#results th#col_seqnum' : function(el) {
@@ -303,34 +271,20 @@ var Spots = {
 
 var Spot = Class.create();
 Spot.prototype = {
-  allPhotos: [], // must declare new array in initialize() or it uses the same one for all Properties
-  photoURLsAreLoaded: false,
-  currentPhoto: 0,
-        
-  initialize: function(dbid, listingfullid, address, ohdate, ohstarttime, ohendtime, price, priceint, link, propertytype, sqft, bedrooms, bathrooms, bathroomshalf, amenities, description, longitude, latitude) {
+  initialize: function(dbid, externalid, name, address, opensat, closesat, link, spottype, description, longitude, latitude) {
     this.dbid = dbid;
-    this.listingfullid = listingfullid;
+    this.externalid = externalid;
+    this.name = name;
     this.address = address;
-    this.ohdate = ohdate;
-    this.ohstarttime = ohstarttime;
-    this.ohendtime = ohendtime;
-    this.price = price;
-    this.priceint = priceint;
+    this.opensat = opensat;
+    this.closesat = closesat;
     this.link = link;
-    this.propertytype = propertytype;
-    this.sqft = sqft;
-    this.bedrooms = bedrooms;
-    this.bathrooms = bathrooms;
-    this.bathroomshalf = bathroomshalf;
-    this.amenities = amenities;
+    this.spottype = spottype;
     this.description = description;
     this.longitude = longitude;
     this.latitude = latitude;
     
-    this.typecode = this.propertytype.substring(0,1);
-    this.dolpersqft = this.priceint / this.sqft;
-
-    this.allPhotos = new Array(); // this makes sure the array is mine and mine alone
+    this.typecode = this.spottype.substring(0,1);
 
     Spots.addSpot(this);
   },
@@ -341,11 +295,7 @@ Spot.prototype = {
 
   showBubble: function() {
     Spots.currentSpot = this.seqnum;
-    this.marker.openInfoWindowHtml(this.address+"<br/><a href='#' onclick='Spots.showImages("+this.seqnum+");return false'>Images</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href='#' onclick='Spots.showDescription("+this.seqnum+");return false'>Description</a>");
-  },
-
-  showImages: function() {
-    this.initializeImage();
+    this.marker.openInfoWindowHtml(this.address+"<br/><a href='#' onclick='Spots.showDescription("+this.seqnum+");return false'>Description</a>");
   },
 
   showDescription: function() {
@@ -378,15 +328,15 @@ Spot.prototype = {
       markerOpts.icon = nIcon;
       markerOpts.title = this.address;		 
       this.marker = new GMarker(point, markerOpts);
-      this.marker.propertyItem = this;
+      this.marker.spotItem = this;
       GEvent.addListener(this.marker, "click", function() {
-                           this.propertyItem.showBubble();
+                           this.spotItem.showBubble();
                          });
       GEvent.addListener(this.marker, "mouseover", function() {
-                           this.propertyItem.setAsHovered();
+                           this.spotItem.setAsHovered();
                          });
       GEvent.addListener(this.marker, "mouseout", function() {
-                           this.propertyItem.setAsUnHovered();
+                           this.spotItem.setAsUnHovered();
                          });
     }
     return this.marker;
@@ -399,53 +349,6 @@ Spot.prototype = {
     this.resultrow.removeClassName("hovered");
   },
 
-  prevImage: function() {
-    this.showRelativeImage(-1);
-  },
-
-  nextImage: function() {
-    this.showRelativeImage(1);
-  },
-
-  showRelativeImage: function(increment) {
-    this.currentPhoto = (this.allPhotos.length + this.currentPhoto + increment) % this.allPhotos.length;
-    this.showImage();
-  },
-
-  showSpecificImage: function(num) {
-    this.currentPhoto = num;
-  },
-
-  showImage: function(num) {
-    $("propertyimg").src = this.allPhotos[this.currentPhoto];
-  },
-
-  initializeImage: function() {
-    if (this.photoURLsAreLoaded) { // we already have them, just display the first
-      // images div should aready be visible, start showing images
-      this.showImage();
-    } else {
-      Effect.Appear("imagesdiv"); // start making it appear while we fetch the images
-      // call async photo population
-      new Ajax.Request('images', {asynchronous:true, evalScripts:true, parameters:{id:this.dbid}});
-    }
-  },
-
-  // callback for when async call just updated our list of photos
-  imagesUpdated: function() {
-    this.photoURLsAreLoaded = true;
-//    var collected = "Here's stuff ("+this.dbid+"):\n";
-//    Spots.allProperties.each( function(prop) {
-//                                collected += prop.dbid + " - " + prop.allPhotos.length + "\n";
-//                              } );
-//    alert(collected);
-    this.initializeImage();
-  },
-
-  addPhotoURL: function(url) {
-    this.allPhotos.push(url);
-  },
-
   addToResults: function() {
     $("resultsbody").appendChild(this.createResultNode());
   },
@@ -456,25 +359,17 @@ Spot.prototype = {
                              onclick: "return Spots.showBubble("+this.seqnum+");return false"},
                             this.seqnum);
     var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address}, this.price);
-    var price = Builder.node("td", {className: "price"}, [link]);
-    var dolpersqft = Builder.node("td", {className: "dolpersqft"}, Math.round(this.dolpersqft));
-    var beds = Builder.node("td", {className: "bedrooms"}, this.bedrooms);
-    var baths = Builder.node("td", {className: "bathrooms"}, this.bathrooms);
-    var halfbaths = Builder.node("td", {className: "bathroomshalf"}, this.bathroomshalf);
-    var sqft = Builder.node("td", {className: "sqft"}, this.sqft);
-    var ohstart = Builder.node("td", {className: "ohstarttime"}, this.ohstarttime);
-    var ohend = Builder.node("td", {className: "ohendtime"}, this.ohendtime);
+    var name = Builder.node("td", {className: "name"}, [link]);
+    var distance = Builder.node("td", {className: "distance"}, Math.round(this.distance));
+    var opensat = Builder.node("td", {className: "opensat"}, this.opensat);
+    var closesat = Builder.node("td", {className: "closesat"}, this.closesat);
 
     var row = Builder.node("tr");
     row.appendChild(type);
-    row.appendChild(price);
-    row.appendChild(sqft);
-    row.appendChild(dolpersqft);
-    row.appendChild(beds);
-    row.appendChild(baths);
-    row.appendChild(halfbaths);
-    row.appendChild(ohstart);
-    row.appendChild(ohend);
+    row.appendChild(name);
+    row.appendChild(distance);
+    row.appendChild(opensat);
+    row.appendChild(closesat);
 
     this.resultrow = row; // so we can highlight it on mouseover of marker
 

@@ -8,7 +8,7 @@
   <% for city in @cities %>
     <tr>
       <td><%=h city.name %></td>
-      <td><%= link_to 'Show', city_url(:name => city.nice_name) %></td>
+      <td><%= link_to 'Show', city_url(:name => city.normalized_name) %></td>
       <td><%= link_to 'Edit', :action => 'edit', :id => city %></td>
     </tr>
   <% end %>

@@ -97,7 +97,7 @@ Name:
 <h3>Spots</h3>
 
 <ol>
-  <% @spots.each do |spot| %>
+  <% @city.spots.each do |spot| %>
     <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %> [ <%= spot.latitude %>, <%= spot.longitude %>]</li>
   <% end %>
 

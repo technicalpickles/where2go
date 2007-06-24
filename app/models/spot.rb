@@ -12,15 +12,13 @@ class Spot < ActiveRecord::Base
   end
 
 
-  def update_latlng_from_address
-    loc = self.location
-    self.latitude = loc.lat
-    self.longitude = loc.lng
-  end
-
-  def address= address
-    super.address= address
-    update_latlng_from_address
+  def self.update_latlng_from_address
+    self.find(:all).each do |spot|
+      loc = spot.location
+      spot.latitude = loc.lat
+      spot.longitude = loc.lng
+      spot.save!
+    end
   end
 
   def to_marker

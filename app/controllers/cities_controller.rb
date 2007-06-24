@@ -25,6 +25,7 @@ class CitiesController < ApplicationController
     elsif params[:id]
       @city = City.find(params[:id])
     end
+    @spots = @city.spots
     @origin = @city.origin
     @markers = collect_markers @city.spots
 

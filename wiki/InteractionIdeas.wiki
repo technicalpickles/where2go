@@ -1,0 +1,18 @@
+#summary How do we think people will want to interact with where2go
+
+= Initial screen possibilities =
+
+  * one text area to type your current location
+  * map to click/drill down into
+  * some simple options
+    * search radius
+    * type of spot
+  * expandable "advanced" options panel
+    * opening hours
+    * whatever else we can come up with
+
+
+= Refining UI =
+  * sidebar with specific categories, checkbox to en/disable
+  * full advanced panel available
+  * ability to drag center point elsewhere

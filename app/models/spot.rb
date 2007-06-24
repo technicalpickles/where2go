@@ -2,10 +2,25 @@ class Spot < ActiveRecord::Base
   include GeoKit::Geocoders
   validates_presence_of :name, :address
   belongs_to :city
-  acts_as_mappable
+  acts_as_mappable :lat_column_name=> 'latitude', :lng_column_name=> 'longitude'
 
   def location
-    GoogleGeocoder.geocode self.address
+    if @location.nil?
+      @location = GoogleGeocoder.geocode self.address
+    end
+    @location
+  end
+
+
+  def update_latlng_from_address
+    loc = self.location
+    self.latitude = loc.lat
+    self.longitude = loc.lng
+  end
+
+  def address= address
+    super.address= address
+    update_latlng_from_address
   end
 
   def to_marker

@@ -25,7 +25,7 @@ class Spot < ActiveRecord::Base
     
     info_str = "<font face=\"Arial\" color=\"#000000\">" +
         self.name + "<br>" + self.address + "<p>" +
-        "<a href=\"" + self.city.name + "/spot/" + self.id.to_s + "\">Details...</a></font>"
+        "<a href=\"../city/" + self.city.name + "/spot/" + self.id.to_s + "\">Details...</a></font>"
       
          
     GMarker.new [self.latitude, self.longitude],

@@ -1,8 +1,22 @@
+<% content_for :head do %>
+  <%= @map.to_html %>
+<% end %>
+
+<table border=0 width=300>
+<tr>
+<td>
 <% for column in Spot.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @spot.send(column.name) %>
 </p>
 <% end %>
-
+</td>
+<td>
+<%= @map.div :width => 300, :height => 225 %>
+</td>
+</tr>
+</table>
+<center>
 <%= link_to 'Edit', :action => 'edit', :id => @spot %> |
 <%= link_to 'Back', :action => 'list' %>
+</center>

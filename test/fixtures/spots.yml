@@ -89,3 +89,141 @@ dd15:
   city_id: 1
   address: 22 BEACON ST, BOSTON, MA
   phone: 617-227-0565
+md1:
+  id: 16
+  name: McDonald's
+  city_id: 1
+  address: 14 MC GRATH HWY, SOMERVILLE, MA 02143
+  phone: unknown
+md2:
+  id: 17
+  name: McDonald's
+  city_id: 1
+  address: 463 MASSACHUSETTS AVE, CAMBRIDGE, MA 02139
+  phone: unknown
+md3:
+  id: 18
+  name: McDonald's
+  city_id: 1
+  address: ONE FLEET CENTER, BOSTON, MA 02114
+  phone: unknown
+md4:
+  id: 19
+  name: McDonald's
+  city_id: 1
+  address: 146 TREMONT ST, BOSTON, MA 02111 	
+  phone: unknown
+md5:
+  id: 20
+  name: McDonald's
+  city_id: 1
+  address: 417 WASHINGTON ST, BOSTON, MA 02110 	
+  phone: unknown
+md6:
+  id: 21
+  name: McDonald's
+  city_id: 1
+  address: 702 WASHINGTON ST, BOSTON, MA 02111 	
+  phone: unknown
+md7:
+  id: 22
+  name: McDonald's
+  city_id: 1
+  address: 154 MASS AVE, BOSTON, MA 02215 	
+  phone: unknown
+md8:
+  id: 23
+  name: McDonald's
+  city_id: 1
+  address: ONE UNION STREET, BOSTON, MA 02108-2408
+  phone: unknown
+md9:
+  id: 24
+  name: McDonald's
+  city_id: 1
+  address: 1282 BOYLSTON ST, BOSTON, MA 02215 	
+  phone: unknown
+md10:
+  id: 25
+  name: McDonald's
+  city_id: 1
+  address: 540 COMMONWEALTH AVE, BOSTON, MA 02215 	
+  phone: unknown
+md11:
+  id: 26
+  name: McDonald's
+  city_id: 1
+  address: 949 COMMONWEALTH AVE, BOSTON, MA 02215 	
+  phone: unknown
+md12:
+  id: 27
+  name: McDonald's
+  city_id: 1
+  address: 2 S STATION, BOSTON, MA 02110 	
+  phone: unknown
+md13:
+  id: 28
+  name: McDonald's
+  city_id: 1
+  address: 700 ATLANTIC AVE, BOSTON, MA 02111
+  phone: unknown
+md14:
+  id: 29
+  name: McDonald's
+  city_id: 1
+  address: WASHINGTON ST RELOCATION, BOSTON, MA 02108
+  phone: unknown
+md15:
+  id: 30
+  name: McDonald's
+  city_id: 1
+  address: 128 BROADWAY, EVERETT, MA 02149 	
+  phone: unknown
+md16:
+  id: 31
+  name: McDonald's
+  city_id: 1
+  address: 870 MASSACHUSETTS AVE, BOSTON, MA 02118 
+  phone: unknown
+md17:
+  id: 32
+  name: McDonald's
+  city_id: 1
+  address: 360 WESTERN AVENUE, BRIGHTON, MA 02135-1011
+  phone: unknown
+md18:
+  id: 33
+  name: McDonald's
+  city_id: 1
+  address: 340-350 LONGWOOD AVE, BOSTON, MA 02115 	
+  phone: unknown
+md19:
+  id: 34
+  name: McDonald's
+  city_id: 1
+  address: 3850 MYSTIC VALLEY MALL, MEDFORD, MA 02155
+  phone: unknown
+md20:
+  id: 35
+  name: McDonald's
+  city_id: 1
+  address: 1223 COMMONWEALTH AVENUE, BOSTON, MA 02134
+  phone: unknown
+md21:
+  id: 36
+  name: McDonald's
+  city_id: 1
+  address: 178 BORDER ST, EAST BOSTON, MA 02128 	
+  phone: unknown
+md22:
+  id: 37
+  name: McDonald's
+  city_id: 1
+  address: 234 ELM ST, SOMERVILLE, MA 02144 	
+  phone: unknown
+md23:
+  id: 38
+  name: McDonald's
+  city_id: 1
+  address: 301 WARREN ST, ROXBURY, MA 02119 	
+  phone: unknown

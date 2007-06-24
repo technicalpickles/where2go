@@ -6,8 +6,7 @@ class City < ActiveRecord::Base
   acts_as_mappable
 
   def origin
-    loc = GoogleGeocoder.geocode self.name
-    [loc.lat, loc.lng]
+    [self.latitude, self.longitude]
   end
 
   def self.spots_within distance

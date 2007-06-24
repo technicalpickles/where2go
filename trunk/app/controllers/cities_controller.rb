@@ -40,9 +40,9 @@ class CitiesController < ApplicationController
       end
       @city = City.find_by_normalized_name params[:city]
 
-      @spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
+      spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
 
-      @markers = collect_markers @spots
+      @markers = collect_markers spots
       build_map
 
       respond_to do |wants|

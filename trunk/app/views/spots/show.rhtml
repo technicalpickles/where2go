@@ -75,7 +75,14 @@ a:hover {
 <div class="main">
 
 <div class="content">
-<h2>Address:</h2> <%=h @spot.send('address') %>
+<h2>Address:</h2> <b><%=h @spot.send('address') %></b><br>
+<form action="http://maps.google.com/maps" method="get" target="_blank">
+<p><label for="saddr">Get directions from:</label>
+<input type="text" name="saddr" id="saddr" value="" />
+<input type="submit" value="Go" />
+<input type="hidden" name="daddr" value='<%=h @spot.send('address') %>' />
+<input type="hidden" name="hl" value="en" /></p>
+</form>
 <p>
 <h2>Phone:</h2> <%=h @spot.send('phone') %>
 </div>

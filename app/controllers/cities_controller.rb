@@ -23,10 +23,12 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
 
-#    loc = GoogleGeocoder.geocode @city.name
-    @map = GMap.new 'city_map'
-    @map.control_init :large_map => true, :map_type => true
-#    @map.control_zoom_init [loc.lat, loc.lng], 4
+    loc = GoogleGeocoder.geocode @city.name
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    if loc.success
+      @map.center_zoom_init([loc.lat,loc.lng],12)
+    end
   end
 
   def new

@@ -1,0 +1,29 @@
+#summary Welcome to where2go
+
+= What in the world is this? =
+
+where2go aims to be a user-maintained, web-based, Ajax-enabled, Google-maps-powered, and otherwise buzzword-compliant, repository of useful restaurant/store/etc. information.
+
+
+= Development =
+
+== Data ==
+
+  * [SQLDataStructure]
+  * SourcesOfData
+
+== Business Logic ==
+
+  * SearchAPI
+  * IntermediateFormat
+
+== UI ==
+
+  * PageLayouts
+  * InteractionIdeas
+
+
+
+
+
+

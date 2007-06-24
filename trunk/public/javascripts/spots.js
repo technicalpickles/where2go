@@ -271,7 +271,7 @@ var Spots = {
 
 var Spot = Class.create();
 Spot.prototype = {
-  initialize: function(dbid, externalid, name, address, phone, opensat, closesat, link, spottype, description, distance, longitude, latitude) {
+  initialize: function(dbid, externalid, name, address, phone, opensat, closesat, link, spottype, description, distance, latitude, longitude) {
     this.dbid = dbid;
     this.externalid = externalid;
     this.name = name;
@@ -283,8 +283,8 @@ Spot.prototype = {
     this.spottype = spottype;
     this.description = description;
     this.distance = distance;
-    this.longitude = longitude;
     this.latitude = latitude;
+    this.longitude = longitude;
     
     this.typecode = this.spottype.substring(0,1);
 

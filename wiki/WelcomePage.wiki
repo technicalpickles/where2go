@@ -14,14 +14,13 @@ where2go aims to be a user-maintained, web-based, Ajax-enabled, Google-maps-powe
 
 == Business Logic ==
 
-  * SearchAPI
+  * SearchApi
   * IntermediateFormat
 
 == UI ==
 
   * PageLayouts
   * InteractionIdeas
-
 
 
 

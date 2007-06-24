@@ -1,9 +1,9 @@
 page.assign "Spots.allSpots", []
 
-page.call "new Spot", 1, "extid1", "Green St. Grill", "280 Green St, Cambridge, MA", "(617) 876-1655", "11:00", "1:00", "http://greenstreetgrill.com/", "R", "Green Street Grill Description", 0.1, 42.364434, -71.104696
-page.call "new Spot", 2, "extid2", "Tavern & Wish", "720 Massachusetts Ave, Cambridge, MA", "(617) 868-9171", "12:00", "23:00", "http://thetavernandwish.com/", "R", "Tavern & Wish Description", 0.1, 42.364434, -71.104696
-page.call "new Spot", 3, "extid3", "Picante II", "735 Massachusetts Ave, Cambridge, MA", "(617) 576-6394", "14:00", "22:00", "http://greenstreetgrill.com/", "R", "Picante II Description", 0.2, 42.364434, -71.104696
-page.call "new Spot", 4, "extid4", "John's Barber Shop", "16 Prospect St, Cambridge, MA", "(617) 492-2962", "10:00", "18:00", "http://www.google.com/", "S", "John's Barber Shop Description", 0.3, 42.364434, -71.104696
-page.call "new Spot", 5, "extid5", "Cantab Lounge", "738 Massachusetts Ave, Cambridge, MA", "(617) 354-2685", "12:00", "24:00", "http://www.cantab-lounge.com/", "S", "Cantab LoungeDescription", 0.3, 42.364434, -71.104696
+page.call "new Spot", 1, "extid1", "Green St. Grill", "280 Green St, Cambridge, MA", "(617) 876-1655", "11:00", "1:00", "http://greenstreetgrill.com/", "R", "Green Street Grill Description", 0.1, -71.102, 42.363
+page.call "new Spot", 2, "extid2", "Tavern & Wish", "720 Massachusetts Ave, Cambridge, MA", "(617) 868-9171", "12:00", "23:00", "http://thetavernandwish.com/", "R", "Tavern & Wish Description", 0.1, -71.105, 42.366
+page.call "new Spot", 3, "extid3", "Picante II", "735 Massachusetts Ave, Cambridge, MA", "(617) 576-6394", "14:00", "22:00", "http://greenstreetgrill.com/", "R", "Picante II Description", 0.2, -71.105, 42.364
+page.call "new Spot", 4, "extid4", "John's Barber Shop", "16 Prospect St, Cambridge, MA", "(617) 492-2962", "10:00", "18:00", "http://www.google.com/", "S", "John's Barber Shop Description", 0.3, -71.105, 42.365
+page.call "new Spot", 5, "extid5", "Cantab Lounge", "738 Massachusetts Ave, Cambridge, MA", "(617) 354-2685", "12:00", "24:00", "http://www.cantab-lounge.com/", "S", "Cantab LoungeDescription", 0.3, -71.104, 42.364
 
 page.call "Spots.update"

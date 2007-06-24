@@ -16,6 +16,11 @@ class SpotsController < ApplicationController
     @spot_pages, @spots = paginate :spots, :per_page => 10
   end
 
+  def map
+    # yeah, I know, I probably will ignore this anyway
+    @spot = Spot.find(:first, :order => 'RAND()')
+  end
+
   def show
     @spot = Spot.find(params[:id])
   end

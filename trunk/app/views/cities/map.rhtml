@@ -20,21 +20,27 @@ window.onload = addCodeToFunction(window.onload,function() {
     <%= select_tag "spottype[]", options_for_select(
 [['Restaurant', 'R'], ['Bar', 'B'], ['Store', 'S']], [ 'R' ] ), {:multiple => true, :size => 3} %>
     </td>
+<!--
     <th>Open Before</th>
     <th>Open After</th>
+-->
     <th>Name</th>
     <th>How Many</th>
+    <th>Distance</th>
     <th>&nbsp;</th>
     </tr>
     <tr>
+<!--
     <td><%= text_field_tag :openbefore, "", {:size => 5} %></td>
     <td><%= text_field_tag :openafter, "", {:size => 5} %></td>
-    <td><%= text_field_tag :name, "", {:size => 9} %></td>
+-->
+    <td><%= text_field_tag :namefragment, "", {:size => 9} %></td>
     <td><%= text_field_tag :nearesthowmany, "10", {:size => 3} %></td>
+    <td><%= text_field_tag :distance, "1", {:size => 3} %></td>
     <td>
-<%= hidden_field_tag :name, "Boston" %>
-<%= hidden_field_tag :hublat, "42.400245" %>
-<%= hidden_field_tag :hublng, "-71.124967" %>
+<%= hidden_field_tag :city, "Boston" %>
+<%= hidden_field_tag :lat, "42.400245" %>
+<%= hidden_field_tag :lng, "-71.124967" %>
     <%= submit_tag "Search" %>
     </td>
 <%= end_form_tag %>
@@ -53,8 +59,10 @@ window.onload = addCodeToFunction(window.onload,function() {
           <th id="col_seqnum">T</th>
           <th id="col_name">Name</th>
           <th id="col_distance">Distance</th>
+<!--
           <th id="col_opensat">Opens</th>
           <th id="col_closesat">Closes</th>
+-->
         </tr>
       </thead>
       <tbody id="resultsbody">

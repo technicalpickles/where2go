@@ -47,7 +47,7 @@ class CitiesController < ApplicationController
 
       respond_to do |wants|
         wants.html { render :action => :show }
-        wants.js
+        wants.js { render :action => :queryjs }
       end
   end
 
@@ -91,12 +91,15 @@ class CitiesController < ApplicationController
 
   # stub for now, the view does all the fakery
   def queryjs
-    if params[:name]
-      @city = City.find_by_normalized_name params[:name]
-    elsif params[:id]
-      @city = City.find(params[:id])
+    if params[:lat] && params[:lng]
+      @origin = [params[:lat].to_f, params[:lng].to_f]
+    else
+      @city = City.find_by_normalized_name params[:city]
+      @origin = @city.origin
     end
-    @city = City.find :first
+    @city = City.find_by_normalized_name params[:city]
+
+    @spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
   end
 
   private

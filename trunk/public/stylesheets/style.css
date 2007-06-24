@@ -1,0 +1,116 @@
+#content {
+background-color: #fff;
+border: 4px solid #ccc;
+padding: 10px;
+}
+
+#notification {
+border: 5px solid #9c9;
+background-color: #cfc;
+padding: 5px;
+margin: 10px 0;
+}
+
+H1 {
+     margin-top: 2px;
+     margin-bottom: 8px;
+     font-size: 22px;
+}
+
+DIV#choices {
+  font-size: 14px;
+}
+
+DIV#resultsdiv {
+  height: 700px;
+  padding-left: 20px;
+}
+
+TABLE#results THEAD TH {
+  border-bottom: thin solid red;
+  cursor: pointer;
+}
+
+
+TABLE#results THEAD TH,
+TABLE#results TBODY TD {
+  padding: 1px 2px;
+}
+
+TABLE#results TH,
+TABLE#results TD {
+  border-bottom: thin solid #444;
+  border-right: thin solid #444;
+}
+
+TABLE#results {
+  font-size: 12px;
+  border-left: thin solid #444;
+  border-top: thin solid #444;
+}
+
+TABLE#results TBODY TD.markercode {
+  padding: 2px 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: smaller;
+  border: solid thin black;
+  cursor: pointer;
+}
+
+.marker_C {
+  background-color: #9af;
+}
+
+.marker_S {
+  background-color: #af2;
+}
+
+.marker_M {
+  background-color: #f44;
+}
+
+.bedrooms, .bathrooms, .bathroomshalf {
+  text-align: center;
+}
+
+.price, .priceint, .sqft, .dpsf, .ohstarttime, .ohendtime {
+  text-align: right;
+}
+
+TR.hovered {
+  background-color: #9cb;
+}
+
+TH.ascending {
+  background-color: #9f9;
+}
+
+TH.descending {
+  background-color: #f99;
+}
+
+DIV.bubble {
+/*   border: solid red thin; */
+}
+
+DIV#imagesdiv {
+  background-color: #dec;
+  border: solid thin black;
+  position: absolute;
+  top: 150px;
+  left: 44px;
+  height: 300px;
+  width: 350px;
+}
+
+DIV#descriptiondiv {
+  padding: 3px;
+  background-color: #edc;
+  border: solid thin black;
+  position: absolute;
+  top: 460px;
+  left: 44px;
+  height: 300px;
+  width: 500px;
+}

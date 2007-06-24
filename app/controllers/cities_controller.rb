@@ -23,11 +23,21 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
 
-    loc = GoogleGeocoder.geocode @city.name
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
-    if loc.success
-      @map.center_zoom_init([loc.lat,loc.lng],12)
+
+    city_loc = lookup_location @city.name
+    if city_loc.success
+      @map.center_zoom_init [city_loc.lat, city_loc.lng], 12
+    end
+
+    @city.spots.each do |spot|
+      spot_loc = lookup_location spot.address
+      marker = GMarker.new [spot_loc.lat, spot_loc.lng],
+        :title => spot.name,
+        :info_window => "Info! Info!"
+
+      @map.overlay_init marker
     end
   end
 
@@ -63,4 +73,10 @@ class CitiesController < ApplicationController
     City.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
+
+  private
+  def lookup_location address
+    GoogleGeocoder.geocode address
+  end
+
 end

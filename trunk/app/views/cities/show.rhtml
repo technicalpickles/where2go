@@ -1,8 +1,10 @@
-<% for column in City.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @city.send(column.name) %>
-</p>
+<% content_for :head do %>
+  <%= @map.to_html %>
 <% end %>
+
+<h2><%= @city.name %></h2>
+
+<%= @map.div :width => 600, :height => 400 %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @city %> |
 <%= link_to 'Back', :action => 'list' %>

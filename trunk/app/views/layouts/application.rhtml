@@ -6,6 +6,8 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Where2Go : <%= controller.title_prefix %> : <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
+  <%= GMap.header %>
+  <%= yield :head %>
 </head>
 <body>
 

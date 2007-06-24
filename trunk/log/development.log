@@ -1,0 +1,223 @@
+  [4;36;1mSQL (0.000218)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.020473)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000292)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000325)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCities (1)
+  [4;35;1mSQL (0.022439)[0m   [0mCREATE TABLE cities (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `description` text DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000294)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000298)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000689)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.000868)[0m   [0;1mSHOW KEYS FROM cities[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCity Columns (0.000887)[0m   [0mSHOW FIELDS FROM cities[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-06-24 12:24:41) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/city" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-06-24 12:24:48) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/city/list" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing CitiesController#list (for 127.0.0.1 at 2007-06-24 12:24:57) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"list", "controller"=>"cities"}
+  [4;36;1mSQL (0.000232)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCity Columns (0.000837)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.007090)[0m   [0;1mSELECT count(*) AS count_all FROM cities [0m
+  [4;35;1mCity Load (0.000299)[0m   [0mSELECT * FROM cities LIMIT 0, 10[0m
+Rendering  within layouts/cities
+Rendering cities/list
+Completed in 0.08066 (12 reqs/sec) | Rendering: 0.00589 (7%) | DB: 0.00846 (10%) | 200 OK [http://localhost/cities/list]
+
+
+Processing CitiesController#new (for 127.0.0.1 at 2007-06-24 12:24:59) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"new", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.007200)[0m   [0;1mSHOW FIELDS FROM cities[0m
+Rendering  within layouts/cities
+Rendering cities/new
+Rendered cities/_form (0.00173)
+Completed in 0.24406 (4 reqs/sec) | Rendering: 0.23204 (95%) | DB: 0.00720 (2%) | 200 OK [http://localhost/cities/new]
+
+
+Processing CitiesController#create (for 127.0.0.1 at 2007-06-24 12:25:17) [POST]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"city"=>{"name"=>"Boston", "description"=>"The city that always sleeps!\r\n\r\n"}, "commit"=>"Create", "action"=>"create", "controller"=>"cities"}
+  [4;35;1mCity Columns (0.000899)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000318)[0m   [0mINSERT INTO cities (`name`, `description`) VALUES('Boston', 'The city that always sleeps!\r\n\r\n')[0m
+  [4;36;1mSQL (0.003363)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/list
+Completed in 0.01643 (60 reqs/sec) | DB: 0.00466 (28%) | 302 Found [http://localhost/cities/create]
+
+
+Processing CitiesController#list (for 127.0.0.1 at 2007-06-24 12:25:17) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"list", "controller"=>"cities"}
+  [4;35;1mCity Columns (0.001105)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.000232)[0m   [0;1mSELECT count(*) AS count_all FROM cities [0m
+  [4;35;1mCity Load (0.000127)[0m   [0mSELECT * FROM cities LIMIT 0, 10[0m
+Rendering  within layouts/cities
+Rendering cities/list
+Completed in 0.00951 (105 reqs/sec) | Rendering: 0.00339 (35%) | DB: 0.00146 (15%) | 200 OK [http://localhost/cities/list]
+  [4;36;1mSQL (0.000207)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSpot Columns (0.000000)[0m   [0mMysql::Error: Table 'where2go_development.spots' doesn't exist: SHOW FIELDS FROM spots[0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000331)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSpots (2)
+  [4;35;1mSQL (0.007892)[0m   [0mCREATE TABLE spots (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `city_id` int(11) DEFAULT NULL, `latitude` float DEFAULT NULL, `longitude` float DEFAULT NULL, `address` varchar(255) DEFAULT NULL, `phone` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000238)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000596)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSHOW KEYS FROM cities[0m
+  [4;35;1mSQL (0.000852)[0m   [0mSHOW FIELDS FROM spots[0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mSHOW KEYS FROM spots[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSpot Columns (0.031085)[0m   [0mSHOW FIELDS FROM spots[0m
+
+
+Processing SpotsController#index (for 127.0.0.1 at 2007-06-24 12:25:47) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"index", "controller"=>"spots"}
+  [4;36;1mSpot Columns (0.001035)[0m   [0;1mSHOW FIELDS FROM spots[0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT count(*) AS count_all FROM spots [0m
+  [4;36;1mSpot Load (0.000123)[0m   [0;1mSELECT * FROM spots LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/spots
+Rendering spots/list
+Completed in 0.01196 (83 reqs/sec) | Rendering: 0.00553 (46%) | DB: 0.00137 (11%) | 200 OK [http://localhost/spots/]
+
+
+Processing SpotsController#new (for 127.0.0.1 at 2007-06-24 12:27:41) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"new", "controller"=>"spots"}
+  [4;35;1mSpot Columns (0.001049)[0m   [0mSHOW FIELDS FROM spots[0m
+Rendering  within layouts/spots
+Rendering spots/new
+Rendered spots/_form (0.00237)
+Completed in 0.01196 (83 reqs/sec) | Rendering: 0.00611 (51%) | DB: 0.00105 (8%) | 200 OK [http://localhost/spots/new]
+
+
+Processing SpotsController#create (for 127.0.0.1 at 2007-06-24 12:28:42) [POST]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"commit"=>"Create", "spot"=>{"name"=>"Red Bones BBQ", "latitude"=>"", "phone"=>"(617) 628.2200", "longitude"=>"", "address"=>"55 Chester Street, Somerville, MA  02144"}, "action"=>"create", "controller"=>"spots"}
+  [4;36;1mSpot Columns (0.001170)[0m   [0;1mSHOW FIELDS FROM spots[0m
+  [4;35;1mSQL (0.006311)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mINSERT INTO spots (`name`, `latitude`, `phone`, `city_id`, `longitude`, `address`) VALUES('Red Bones BBQ', NULL, '(617) 628.2200', NULL, NULL, '55 Chester Street, Somerville, MA 02144')[0m
+  [4;35;1mSQL (0.010082)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/spots/list
+Completed in 0.02899 (34 reqs/sec) | DB: 0.01796 (61%) | 302 Found [http://localhost/spots/create]
+
+
+Processing SpotsController#list (for 127.0.0.1 at 2007-06-24 12:28:42) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"list", "controller"=>"spots"}
+  [4;36;1mSpot Columns (0.001148)[0m   [0;1mSHOW FIELDS FROM spots[0m
+  [4;35;1mSQL (0.000221)[0m   [0mSELECT count(*) AS count_all FROM spots [0m
+  [4;36;1mSpot Load (0.000145)[0m   [0;1mSELECT * FROM spots LIMIT 0, 10[0m
+Rendering  within layouts/spots
+Rendering spots/list
+Completed in 0.02363 (42 reqs/sec) | Rendering: 0.01683 (71%) | DB: 0.00151 (6%) | 200 OK [http://localhost/spots/list]
+
+
+Processing SpotsController#show (for 127.0.0.1 at 2007-06-24 12:29:50) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"spots"}
+  [4;35;1mSpot Columns (0.001006)[0m   [0mSHOW FIELDS FROM spots[0m
+  [4;36;1mSpot Load (0.000454)[0m   [0;1mSELECT * FROM spots WHERE (spots.`id` = 1) [0m
+Rendering  within layouts/spots
+Rendering spots/show
+Completed in 0.01049 (95 reqs/sec) | Rendering: 0.00413 (39%) | DB: 0.00146 (13%) | 200 OK [http://localhost/spots/show/1]

@@ -14,6 +14,12 @@ class Spot < ActiveRecord::Base
         :title => self.name,
         :info_window => "Info! Info!"
   end
+  
+  def to_no_info_marker
+    loc = self.location
+    GMarker.new [loc.lat, loc.lng],
+        :title => self.name
+  end
 
   # FIXME refactor, since it's repeated
   def normalized_name

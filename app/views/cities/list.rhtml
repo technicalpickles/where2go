@@ -2,21 +2,16 @@
 
 <table>
   <tr>
-  <% for column in City.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
+    <th>City</th>
   </tr>
   
-<% for city in @cities %>
-  <tr>
-  <% for column in City.content_columns %>
-    <td><%=h city.send(column.name) %></td>
+  <% for city in @cities %>
+    <tr>
+      <td><%=h city.name %></td>
+      <td><%= link_to 'Show', :action => 'show', :id => city %></td>
+      <td><%= link_to 'Edit', :action => 'edit', :id => city %></td>
+    </tr>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => city %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => city %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => city }, :confirm => 'Are you sure?', :method => :post %></td>
-  </tr>
-<% end %>
 </table>
 
 <%= link_to 'Previous page', { :page => @city_pages.current.previous } if @city_pages.current.previous %>
@@ -24,4 +19,4 @@
 
 <br />
 
-<%= link_to 'New city', :action => 'new' %>
+<%= link_to 'Add a city', :action => 'new' %>

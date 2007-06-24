@@ -18,7 +18,7 @@ var Spots = {
   initialize: function() {
     Spots.map = new GMap2(document.getElementById("map"));
     Spots.geocoder = new GClientGeocoder();
-    Spots.map.addControl(new GSmallMapControl());
+    Spots.map.addControl(new GLargeMapControl());
     Spots.map.addControl(new GMapTypeControl());
     Spots.map.setCenter(new GLatLng(42.364434,-71.104696), 14);
     Spots.rehub("13 Magazine St. Cambridge, MA 02139");
@@ -180,8 +180,8 @@ var Spots = {
 
   setNewHub: function(point) {
     Spots.hubpoint = point;
-    $("hublat").value = point.lat();
-    $("hublng").value = point.lng();
+    $("lat").value = point.lat();
+    $("lng").value = point.lng();
   },
 
   toGLatLng: function(s) {
@@ -238,6 +238,7 @@ var Spots = {
 	Spots.reSort("distance");
       }
     },
+/*
     'table#results th#col_opensat' : function(el) {
       el.onclick = function() {
 	Spots.reSort("opensat");
@@ -248,6 +249,7 @@ var Spots = {
 	Spots.reSort("closesat");
       }
     },
+*/
     'table#results th#col_seqnum' : function(el) {
       el.onclick = function() {
 	Spots.reSort("seqnum");
@@ -328,7 +330,7 @@ Spot.prototype = {
 
       var markerOpts = {};
       markerOpts.icon = nIcon;
-      markerOpts.title = this.address;		 
+      markerOpts.title = this.address + " - " + this.phone;
       this.marker = new GMarker(point, markerOpts);
       this.marker.spotItem = this;
       GEvent.addListener(this.marker, "click", function() {
@@ -360,18 +362,18 @@ Spot.prototype = {
                             {className: "markercode marker_"+this.typecode,
                              onclick: "return Spots.showBubble("+this.seqnum+");return false"},
                             this.seqnum);
-    var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address}, this.name);
+    var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address + " - " + this.phone}, this.name);
     var name = Builder.node("td", {className: "name"}, [link]);
     var distance = Builder.node("td", {className: "distance"}, this.distance);
-    var opensat = Builder.node("td", {className: "opensat"}, this.opensat);
-    var closesat = Builder.node("td", {className: "closesat"}, this.closesat);
+//    var opensat = Builder.node("td", {className: "opensat"}, this.opensat);
+//    var closesat = Builder.node("td", {className: "closesat"}, this.closesat);
 
     var row = Builder.node("tr");
     row.appendChild(type);
     row.appendChild(name);
     row.appendChild(distance);
-    row.appendChild(opensat);
-    row.appendChild(closesat);
+//    row.appendChild(opensat);
+//    row.appendChild(closesat);
 
     this.resultrow = row; // so we can highlight it on mouseover of marker
 

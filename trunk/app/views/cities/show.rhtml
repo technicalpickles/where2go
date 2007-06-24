@@ -2,7 +2,7 @@
   <%= @map.to_html %>
 <% end %>
 
-<h2><%= link_to "All Cities", :action => 'list'%> &raquo; <%= @city.name %></h2>
+<h2><%= link_to "All Cities", :action => 'list'%> &raquo; <%= @city.name if @city %></h2>
 
 <%= @map.div :width => 600, :height => 400 %>
 
@@ -17,7 +17,7 @@ Radius:
 
 <ol>
   <% @city.spots.each do |spot| %>
-    <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %></li>
+    <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %> [ <%= spot.latitude %>, <%= spot.longitude %>]</li>
   <% end %>
 
 </ol>

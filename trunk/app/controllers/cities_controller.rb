@@ -25,15 +25,22 @@ class CitiesController < ApplicationController
     elsif params[:id]
       @city = City.find(params[:id])
     end
-
+    @origin = @city.origin
     @markers = collect_markers @city.spots
 
     build_map
   end
 
   def spots_by_distance
+      if params[:lat] && params[:lng]
+        @origin = [params[:lat].to_f, params[:lng].to_f]
+      else
+        @city = City.find_by_normalized_name params[:city]
+        @origin = @city.origin
+      end
       @city = City.find_by_normalized_name params[:city]
-      @spots = Spot.find :all, :origin => @city.name, :conditions => "distance < #{params[:distance]}"
+
+      @spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
 
       @markers = collect_markers @spots
       build_map
@@ -42,7 +49,6 @@ class CitiesController < ApplicationController
         wants.html { render :action => :show }
         wants.js
       end
-
   end
 
   def new
@@ -100,18 +106,11 @@ class CitiesController < ApplicationController
     end
   end
 
-  def lookup_location address
-    GoogleGeocoder.geocode address
-  end
-
   def build_map
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
 
-    city_loc = lookup_location @city.name
-    if city_loc.success
-      @map.center_zoom_init [city_loc.lat, city_loc.lng], 12
-    end
+    @map.center_zoom_init [@origin[0], @origin[1]], 12
 
     @markers.each do |marker|
       @map.overlay_init marker

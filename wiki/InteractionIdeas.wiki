@@ -9,7 +9,7 @@
   * some simple options
     * search radius
     * type of spot
-    -Jay: Maybe we can have a sidebar in the initial search results, to further filter via advanced options.
+    -Jay: Maybe we can have a sidebar in the initial search results, to further filter via advanced options. See www.trulia.com for a good example of this.
   * expandable "advanced" options panel
     * opening hours
     * whatever else we can come up with

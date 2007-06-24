@@ -6,7 +6,12 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Where2Go : <%= controller.title_prefix %> : <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "builder" %>
   <%= GMap.header %>
+  <%= javascript_include_tag "behaviour" %>
+  <%= javascript_include_tag "spots" %>
+
   <%= yield :head %>
 </head>
 <body>

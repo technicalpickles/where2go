@@ -1,0 +1,79 @@
+<% content_for :head do %>
+<script type="text/javascript">
+var map;
+window.onload = addCodeToFunction(window.onload,function() {
+  Spots.load();
+});
+</script>
+<% end %>
+
+
+    <div id="choices">
+<form id="hubform" onsubmit="Spots.rehub('', true);return false;">
+    Hub: <%= text_field_tag :hubaddress, "13 Magazine St. Cambridge, MA 02139", {:size => 60} %>
+    <%= submit_tag "Recenter" %>
+</form>
+<%= form_remote_tag :url => {:controller => "spot", :action => 'queryjs'}, :html => {:id => "mainform"} %>
+<table>
+  <tr>
+    <td rowspan="2">
+    <%= select_tag "spottype[]", options_for_select(
+[['Condo', 'C'], ['Single Family', 'S'], ['Multi Family', 'M']], [ 'S' ] ), {:multiple => true, :size => 3} %>
+    </td>
+    <th>Min Beds</th>
+    <th>Min SqFt</th>
+    <th>Max Price</th>
+    <th>How Many</th>
+    <th>&nbsp;</th>
+    </tr>
+    <tr>
+    <td><%= text_field_tag :minbedrooms, "3", {:size => 2} %></td>
+    <td><%= text_field_tag :minsqft, "1200", {:size => 5} %></td>
+    <td><%= text_field_tag :maxprice, "700000", {:size => 9} %></td>
+    <td><%= text_field_tag :nearesthowmany, "10", {:size => 3} %></td>
+    <td>
+<%= hidden_field_tag :hublat, "42.400245" %>
+<%= hidden_field_tag :hublng, "-71.124967" %>
+    <%= submit_tag "Search" %>
+    </td>
+<%= end_form_tag %>
+</tr>
+</table>
+    </div>
+    <div id="map" style="width: 700px; height: 700px; float: left;"></div>
+    <div id="message"></div>
+    <div id="resultsdiv">
+<%= hidden_field_tag :sortcolumn, "priceint" %>
+<%= hidden_field_tag :sortdirection, "ascending" %>
+<div id="sortingindicator" style="display:none">Sorting...</div>
+    <table id="results" cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th id="col_seqnum">T</th>
+          <th id="col_priceint">Price</th>
+          <th id="col_sqft">SqFt</th>
+          <th id="col_dolpersqft">$/sf</th>
+          <th id="col_bedrooms">Bd</th>
+          <th id="col_bathrooms">Bth</th>
+          <th id="col_bathroomshalf">Hlf</th>
+          <th id="col_ohstarttime">Start</th>
+          <th id="col_ohendtime">End</th>
+        </tr>
+      </thead>
+      <tbody id="resultsbody">
+      <tr>
+        <td colspan="9" align="center">Nothing selected yet</td>
+      <tr>
+      </tbody>
+    </table>
+    </div>
+<div id="imagesdiv" style="display:none">
+    <img id="spotimg" />
+    <a href="#" onclick="Spots.prevImage();return false">prev</a>
+    <a href="#" onclick="Spots.nextImage();return false">next</a>
+    <br/>
+    <a href="#" onclick="Effect.Fade('imagesdiv');return false">close</a>
+</div>
+<div id="descriptiondiv" style="display:none">
+    Description goes here.
+</div>

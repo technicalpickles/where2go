@@ -10,7 +10,7 @@
 
 <ul>
   <% @city.spots.each do |spot| %>
-    <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :spot => spot.name) %></li>
+    <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %></li>
   <% end %>
 
 </ul>

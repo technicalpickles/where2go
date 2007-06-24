@@ -21,7 +21,13 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find(params[:id])
+    if params[:name]
+      name = params[:name].sub '_', ' ' 
+      name.capitalize!
+      @city = City.find_by_name name
+    elsif params[:id]
+      @city = City.find(params[:id])
+    end
 
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)

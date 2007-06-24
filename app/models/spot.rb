@@ -22,15 +22,13 @@ class Spot < ActiveRecord::Base
   end
 
   def to_marker
-    loc = self.location
-    GMarker.new [loc.lat, loc.lng],
+    GMarker.new [self.latitude, self.longitude],
         :title => self.name,
         :info_window => "Info! Info!"
   end
   
   def to_no_info_marker
-    loc = self.location
-    GMarker.new [loc.lat, loc.lng],
+    GMarker.new [self.latitude, self.longitude],
         :title => self.name
   end
 

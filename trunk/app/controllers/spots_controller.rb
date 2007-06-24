@@ -28,11 +28,7 @@ class SpotsController < ApplicationController
   end
 
   def show
-    if params[:spot]
-      @spot = Spot.find_by_normalized_name params[:spot]
-    elsif params[:id]
-      @spot = Spot.find(params[:id])
-    end
+    @spot = Spot.find(params[:id])
   end
 
   def new

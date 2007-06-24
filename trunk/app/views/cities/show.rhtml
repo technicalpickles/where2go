@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <%= @map.to_html %>
-  
+
 <style type="text/css">
 body {
   background-color: #ffffff;
@@ -27,9 +27,9 @@ h2 {
   border-top: thin solid #000000;
 }
 .filter {
-  width: 25%;        
+  width: 25%;
   height: 400px;
-  float: left;        
+  float: left;
   margin: 0;
   padding: 1% 2%;
   border: thin solid #000000;
@@ -42,13 +42,13 @@ h2 {
   border: thin solid #000000;
 }
 .clear {
-  clear: both;   
+  clear: both;
   height: 1px;
-  overflow: hidden;  
-  margin: 0;        
+  overflow: hidden;
+  margin: 0;
 }
 .footer {
-  background-color: #111111; 
+  background-color: #111111;
   color: #ffffff;
   margin: 0;
   padding: 1% 2%;
@@ -80,6 +80,10 @@ a:hover {
 <% form_tag :action=>"spots_by_distance" do -%>
 Radius:
 <%= text_field_tag :distance, params[:distance], {:size => 2} %>
+<br/>
+Name:
+<%= text_field_tag :namefragment, params[:namefragment], {:size => 8} %>
+<br/>
 <%= hidden_field_tag :city, @city.name %>
 <%= submit_tag "Search" %>
 <% end -%>
@@ -92,7 +96,7 @@ Radius:
 <h3>Spots</h3>
 
 <ol>
-  <% @city.spots.each do |spot| %>
+  <% @spots.each do |spot| %>
     <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %> [ <%= spot.latitude %>, <%= spot.longitude %>]</li>
   <% end %>
 

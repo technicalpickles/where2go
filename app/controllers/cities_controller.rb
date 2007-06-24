@@ -38,7 +38,11 @@ class CitiesController < ApplicationController
       @markers = collect_markers @spots
       build_map
 
-      render :action => :show
+      respond_to do |wants|
+        wants.html { render :action => :show }
+        wants.js
+      end
+
   end
 
   def new

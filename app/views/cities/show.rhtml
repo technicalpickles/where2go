@@ -6,6 +6,13 @@
 
 <%= @map.div :width => 600, :height => 400 %>
 
+<% form_tag :action=>"spots_by_distance" do -%>
+Radius:
+<%= text_field_tag :distance, "1", {:size => 2} %>
+<%= hidden_field_tag :city, @city.name %>
+<%= submit_tag "Search" %>
+<% end -%>
+
 <h3>Spots</h3>
 
 <ul>

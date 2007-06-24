@@ -29,6 +29,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    
+    build_map
   end
 
   def new
@@ -62,5 +64,13 @@ class SpotsController < ApplicationController
   def destroy
     Spot.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+  
+  def build_map
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    loc = @spot.location
+    @map.center_zoom_init [loc.lat, loc.lng], 14
+    @map.overlay_init @spot.to_no_info_marker
   end
 end

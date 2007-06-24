@@ -1,22 +1,97 @@
 <% content_for :head do %>
   <%= @map.to_html %>
+  
+<style type="text/css">
+body {
+  background-color: #ffffff;
+  color: #000;
+}
+.wrapper {
+  margin: 1% 5%;
+  padding: 0;
+  border: thin solid #000000;
+}
+h1 {
+  background-color: #111111;
+  color: #ffffff;
+  margin: 0;
+  padding: .2em 2%;
+}
+h2 {
+  margin: .2em 0;
+}
+.main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: thin solid #000000;
+}
+.content {
+  width: 50%;        
+  float: left;        
+  margin: 0;
+  padding: 1% 2%;
+}
+.map {
+  margin-left: 50%;
+  margin-right: 0px;
+  padding: 1%;
+  font-size: 90%;
+  border: thin solid #000000;
+}
+.clear {
+  clear: both;   
+  height: 1px;
+  overflow: hidden;  
+  margin: 0;        
+}
+.footer {
+  background-color: #111111; 
+  color: #ffffff;
+  margin: 0;
+  padding: 1% 2%;
+}
+.map ul {
+  margin-left: 1em;
+  padding-left: 0;
+}
+a:link {
+  color: #999999;
+  background-color: transparent;
+}
+a:hover {
+  color: #999999;
+  background-color: transparent;
+}
+}
+</style>
+
 <% end %>
 
-<table border=0 width=300>
-<tr>
-<td>
-<% for column in Spot.content_columns %>
+
+<body>
+<div class="wrapper">
+<h1><%=h @spot.send('name') %></h1>
+<div class="main">
+
+<div class="content">
+<h2>Address:</h2> <%=h @spot.send('address') %>
 <p>
-  <b><%= column.human_name %>:</b> <%=h @spot.send(column.name) %>
-</p>
-<% end %>
-</td>
-<td>
-<%= @map.div :width => 300, :height => 225 %>
-</td>
-</tr>
-</table>
-<center>
+<h2>Phone:</h2> <%=h @spot.send('phone') %>
+</div>
+
+<div class="map" id="map" style=height:225px"/>
+
+<!-- need a non-floating element to properly calculate container height -->
+<div class="clear"></div>
+</div> <!-- end main -->
+
+<p class="footer">
 <%= link_to 'Edit', :action => 'edit', :id => @spot %> |
 <%= link_to 'Back', :action => 'list' %>
-</center>
+</p>
+
+</div> <!-- end wrapper -->
+</body>
+</html>
+

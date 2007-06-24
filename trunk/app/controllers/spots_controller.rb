@@ -56,10 +56,15 @@ class SpotsController < ApplicationController
   end
   
   def build_map
-    @map = GMap.new("map_div")
-    @map.control_init(:large_map => true,:map_type => true)
+    @map = GMap.new("map")
+    @map.control_init()
     loc = @spot.location
-    @map.center_zoom_init [loc.lat, loc.lng], 14
+    @map.center_zoom_init [loc.lat, loc.lng], 15
     @map.overlay_init @spot.to_no_info_marker
+    @map.interface_init(
+          :dragging => false, 
+          :info_window => false,
+          :double_click_zoom => false, 
+          :continuous_zoom => false)
   end
 end

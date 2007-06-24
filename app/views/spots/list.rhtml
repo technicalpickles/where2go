@@ -1,0 +1,27 @@
+<h1>Listing spots</h1>
+
+<table>
+  <tr>
+  <% for column in Spot.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for spot in @spots %>
+  <tr>
+  <% for column in Spot.content_columns %>
+    <td><%=h spot.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => spot %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => spot %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => spot }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @spot_pages.current.previous } if @spot_pages.current.previous %>
+<%= link_to 'Next page', { :page => @spot_pages.current.next } if @spot_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New spot', :action => 'new' %>

@@ -1162,3 +1162,110 @@ Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:51:19) [GET]
 Rendering  within layouts/application
 Rendering cities/show
 Completed in 0.01586 (63 reqs/sec) | Rendering: 0.00313 (19%) | DB: 0.00119 (7%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:52:32) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.001775)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000372)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.01450 (68 reqs/sec) | Rendering: 0.00417 (28%) | DB: 0.00215 (14%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:53:32) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000823)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000372)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.01172 (85 reqs/sec) | Rendering: 0.00295 (25%) | DB: 0.00119 (10%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:55:50) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000939)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000282)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.01330 (75 reqs/sec) | Rendering: 0.00326 (24%) | DB: 0.00122 (9%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:56:12) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000829)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000278)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.18665 (5 reqs/sec) | Rendering: 0.00307 (1%) | DB: 0.00111 (0%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:57:34) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000796)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000370)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.16542 (6 reqs/sec) | Rendering: 0.00289 (1%) | DB: 0.00117 (0%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:57:41) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.001126)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000542)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.21100 (4 reqs/sec) | Rendering: 0.00626 (2%) | DB: 0.00167 (0%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:58:19) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.004364)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000377)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.16829 (5 reqs/sec) | Rendering: 0.00406 (2%) | DB: 0.00474 (2%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:58:24) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.001290)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000376)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.20565 (4 reqs/sec) | Rendering: 0.00558 (2%) | DB: 0.00167 (0%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:58:30) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000901)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000269)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.29322 (3 reqs/sec) | Rendering: 0.00294 (1%) | DB: 0.00117 (0%) | 200 OK [http://localhost/cities/show/1]
+
+
+Processing CitiesController#show (for 127.0.0.1 at 2007-06-24 13:58:50) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.001073)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mCity Load (0.000320)[0m   [0mSELECT * FROM cities WHERE (cities.`id` = 1) [0m
+Google geocoding. Address: Boston, MA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Boston, MA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Boston, MA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><AdministrativeArea><AdministrativeAreaName>MA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Suffolk</SubAdministrativeAreaName><Locality><LocalityName>Boston</LocalityName></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails><Point><coordinates>-71.056650,42.358640,0</coordinates></Point></Placemark></Response></kml>
+Rendering  within layouts/application
+Rendering cities/show
+Completed in 0.29971 (3 reqs/sec) | Rendering: 0.00320 (1%) | DB: 0.00139 (0%) | 200 OK [http://localhost/cities/show/1]

@@ -1,5 +1,91 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
+dd1:
   id: 1
-two:
+  name: Dunkin Donuts
+  city_id: 1
+  address: 235 Washington St, Boston, MA
+  phone: 617-248-1987
+dd2:
   id: 2
+  name: Dunkin Donuts
+  city_id: 1
+  address: 3 Post Office Square, Boston, MA
+  phone: 617-451-1058
+dd3:
+  id: 3
+  name: Dunkin Donuts
+  city_id: 1
+  address: 111 State Street, Boston, MA
+  phone: 617-523-1451
+dd4:
+  id: 4
+  name: Dunkin Donuts
+  city_id: 1
+  address: 2 City Hall Sq, Boston, MA
+  phone: 617-720-4501
+dd5:
+  id: 5
+  name: Dunkin Donuts
+  city_id: 1
+  address: 20 NORTH ST, BOSTON, MA
+  phone: 617-367-0041
+dd6:
+  id: 6
+  name: Dunkin Donuts
+  city_id: 1
+  address: 100 City Hall Plaza, Boston, MA
+  phone: 617-227-9790
+dd7:
+  id: 7
+  name: Dunkin Donuts
+  city_id: 1
+  address: 265 FRANKLIN ST, BOSTON, MA
+  phone: 617-261-4699
+dd8:
+  id: 8
+  name: Dunkin Donuts
+  city_id: 1
+  address: 10 Winthrop Sq, Boston, MA
+  phone: 617-426-8025
+dd9:
+  id: 9
+  name: Dunkin Donuts
+  city_id: 1
+  address: 417 Washington St Suite M, Boston, MA
+  phone: 617-451-2106
+dd10:
+  id: 10
+  name: Dunkin Donuts
+  city_id: 1
+  address: 426 Washington St, Boston, MA
+  phone: 617-338-4493
+dd11:
+  id: 11
+  name: Dunkin Donuts
+  city_id: 1
+  address: 1 Summer St, Boston, MA
+  phone: 617-426-2817
+dd12:
+  id: 12
+  name: Dunkin Donuts
+  city_id: 1
+  address: 127 Tremont St, Boston, MA
+  phone: 617-482-4566
+dd13:
+  id: 13
+  name: Dunkin Donuts
+  city_id: 1
+  address: 100 Cambridge St, Boston, MA
+  phone: 617-523-4443
+dd14:
+  id: 14
+  name: Dunkin Donuts
+  city_id: 1
+  address: 70 E India Row, Boston, MA
+  phone: 617-248-8875
+dd15:
+  id: 15
+  name: Dunkin Donuts
+  city_id: 1
+  address: 22 BEACON ST, BOSTON, MA
+  phone: 617-227-0565

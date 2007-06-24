@@ -1,5 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
+boston:
   id: 1
-two:
+  name: Boston
+  description: Boston, Massachusetts
+newyork:
   id: 2
+  name: New York
+  description: New York City

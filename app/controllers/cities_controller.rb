@@ -74,6 +74,21 @@ class CitiesController < ApplicationController
     redirect_to :action => 'list'
   end
 
+  def map
+    # yeah, I know, I probably will ignore this anyway
+    @spot = Spot.find(:first, :order => 'RAND()')
+  end
+
+  # stub for now, the view does all the fakery
+  def queryjs
+    if params[:name]
+      @city = City.find_by_normalized_name params[:name]
+    elsif params[:id]
+      @city = City.find(params[:id])
+    end
+    @city = City.find :first
+  end
+
   private
   def collect_markers spots
     @markers = spots.collect do |spot|

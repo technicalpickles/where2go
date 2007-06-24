@@ -1,349 +1,465 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-dd1:
-  id: 1
-  name: Dunkin Donuts
-  city_id: 1
-  address: 235 Washington St, Boston, MA
-  phone: 617-248-1987
-dd2:
-  id: 2
-  name: Dunkin Donuts
-  city_id: 1
-  address: 3 Post Office Square, Boston, MA
-  phone: 617-451-1058
-dd3:
-  id: 3
-  name: Dunkin Donuts
-  city_id: 1
-  address: 111 State Street, Boston, MA
-  phone: 617-523-1451
-dd4:
-  id: 4
-  name: Dunkin Donuts
-  city_id: 1
-  address: 2 City Hall Sq, Boston, MA
-  phone: 617-720-4501
-dd5:
-  id: 5
-  name: Dunkin Donuts
-  city_id: 1
-  address: 20 NORTH ST, BOSTON, MA
-  phone: 617-367-0041
-dd6:
-  id: 6
-  name: Dunkin Donuts
-  city_id: 1
-  address: 100 City Hall Plaza, Boston, MA
-  phone: 617-227-9790
-dd7:
-  id: 7
-  name: Dunkin Donuts
-  city_id: 1
-  address: 265 FRANKLIN ST, BOSTON, MA
-  phone: 617-261-4699
-dd8:
-  id: 8
-  name: Dunkin Donuts
-  city_id: 1
-  address: 10 Winthrop Sq, Boston, MA
-  phone: 617-426-8025
-dd9:
-  id: 9
-  name: Dunkin Donuts
-  city_id: 1
-  address: 417 Washington St Suite M, Boston, MA
-  phone: 617-451-2106
-dd10:
-  id: 10
-  name: Dunkin Donuts
-  city_id: 1
-  address: 426 Washington St, Boston, MA
-  phone: 617-338-4493
-dd11:
-  id: 11
-  name: Dunkin Donuts
-  city_id: 1
-  address: 1 Summer St, Boston, MA
-  phone: 617-426-2817
-dd12:
-  id: 12
-  name: Dunkin Donuts
-  city_id: 1
-  address: 127 Tremont St, Boston, MA
-  phone: 617-482-4566
-dd13:
-  id: 13
-  name: Dunkin Donuts
-  city_id: 1
-  address: 100 Cambridge St, Boston, MA
-  phone: 617-523-4443
-dd14:
-  id: 14
-  name: Dunkin Donuts
-  city_id: 1
-  address: 70 E India Row, Boston, MA
-  phone: 617-248-8875
-dd15:
-  id: 15
-  name: Dunkin Donuts
-  city_id: 1
-  address: 22 BEACON ST, BOSTON, MA
-  phone: 617-227-0565
-md1:
-  id: 16
-  name: McDonald's
-  city_id: 1
-  address: 14 MC GRATH HWY, SOMERVILLE, MA 02143
-  phone: unknown
-md2:
-  id: 17
-  name: McDonald's
-  city_id: 1
-  address: 463 MASSACHUSETTS AVE, CAMBRIDGE, MA 02139
-  phone: unknown
-md3:
-  id: 18
-  name: McDonald's
-  city_id: 1
-  address: ONE FLEET CENTER, BOSTON, MA 02114
-  phone: unknown
-md4:
-  id: 19
-  name: McDonald's
-  city_id: 1
-  address: 146 TREMONT ST, BOSTON, MA 02111 	
-  phone: unknown
-md5:
-  id: 20
-  name: McDonald's
-  city_id: 1
-  address: 417 WASHINGTON ST, BOSTON, MA 02110 	
-  phone: unknown
-md6:
-  id: 21
-  name: McDonald's
-  city_id: 1
-  address: 702 WASHINGTON ST, BOSTON, MA 02111 	
-  phone: unknown
-md7:
-  id: 22
-  name: McDonald's
-  city_id: 1
-  address: 154 MASS AVE, BOSTON, MA 02215 	
-  phone: unknown
-md8:
-  id: 23
-  name: McDonald's
-  city_id: 1
-  address: ONE UNION STREET, BOSTON, MA 02108-2408
-  phone: unknown
-md9:
-  id: 24
-  name: McDonald's
-  city_id: 1
-  address: 1282 BOYLSTON ST, BOSTON, MA 02215 	
-  phone: unknown
-md10:
-  id: 25
-  name: McDonald's
-  city_id: 1
-  address: 540 COMMONWEALTH AVE, BOSTON, MA 02215 	
-  phone: unknown
-md11:
-  id: 26
-  name: McDonald's
-  city_id: 1
-  address: 949 COMMONWEALTH AVE, BOSTON, MA 02215 	
-  phone: unknown
-md12:
-  id: 27
-  name: McDonald's
-  city_id: 1
-  address: 2 S STATION, BOSTON, MA 02110 	
-  phone: unknown
-md13:
-  id: 28
-  name: McDonald's
-  city_id: 1
-  address: 700 ATLANTIC AVE, BOSTON, MA 02111
-  phone: unknown
-md14:
-  id: 29
-  name: McDonald's
-  city_id: 1
-  address: WASHINGTON ST RELOCATION, BOSTON, MA 02108
-  phone: unknown
-md15:
-  id: 30
-  name: McDonald's
-  city_id: 1
-  address: 128 BROADWAY, EVERETT, MA 02149 	
-  phone: unknown
-md16:
-  id: 31
-  name: McDonald's
-  city_id: 1
-  address: 870 MASSACHUSETTS AVE, BOSTON, MA 02118 
-  phone: unknown
-md17:
-  id: 32
-  name: McDonald's
-  city_id: 1
-  address: 360 WESTERN AVENUE, BRIGHTON, MA 02135-1011
-  phone: unknown
-md18:
-  id: 33
-  name: McDonald's
-  city_id: 1
-  address: 340-350 LONGWOOD AVE, BOSTON, MA 02115 	
-  phone: unknown
-md19:
-  id: 34
-  name: McDonald's
-  city_id: 1
-  address: 3850 MYSTIC VALLEY MALL, MEDFORD, MA 02155
-  phone: unknown
-md20:
-  id: 35
-  name: McDonald's
-  city_id: 1
-  address: 1223 COMMONWEALTH AVENUE, BOSTON, MA 02134
-  phone: unknown
-md21:
-  id: 36
-  name: McDonald's
-  city_id: 1
-  address: 178 BORDER ST, EAST BOSTON, MA 02128 	
-  phone: unknown
-md22:
-  id: 37
-  name: McDonald's
-  city_id: 1
-  address: 234 ELM ST, SOMERVILLE, MA 02144 	
-  phone: unknown
-md23:
-  id: 38
-  name: McDonald's
-  city_id: 1
-  address: 301 WARREN ST, ROXBURY, MA 02119 	
-  phone: unknown
-sb1:
-  id: 39
+--- 
+spots_52: 
   name: Starbucks
-  city_id: 1
-  address: 63-65 Court Street, Boston, MA 02108
+  latitude: "42.3639"
+  id: "52"
   phone: unknown
-sb2:
-  id: 40
-  name: Starbucks
-  city_id: 1
-  address: 84 State Street, Boston, MA 02109
-  phone: unknown
-sb3:
-  id: 41
-  name: Starbucks
-  city_id: 1
-  address: 27 School Street, Boston, MA 02106
-  phone: unknown
-sb4:
-  id: 42
-  name: Starbucks
-  city_id: 1
-  address: 1 Federal Street, Boston, MA 02110
-  phone: unknown
-sb5:
-  id: 43
-  name: Starbucks
-  city_id: 1
-  address: 240 Washington St., Boston, MA 02106
-  phone: unknown
-sb6:
-  id: 44
-  name: Starbucks
-  city_id: 1
-  address: 2-4 Faneuil Hall Market Place, Boston, MA 02101
-  phone: unknown
-sb7:
-  id: 45
-  name: Starbucks
-  city_id: 1
-  address: 1 International Place, Boston, MA 02110
-  phone: unknown
-sb8:
-  id: 46
-  name: Starbucks
-  city_id: 1
-  address: 211 Congress Street, Boston, MA 02110
-  phone: unknown
-sb9:
-  id: 47
-  name: Starbucks
-  city_id: 1
-  address: 296 State St, Boston, MA 02109
-  phone: unknown
-sb10:
-  id: 48
-  name: Starbucks
-  city_id: 1
-  address: 12 Winter Street, Boston, MA 02106
-  phone: unknown
-sb11:
-  id: 49
-  name: Starbucks
-  city_id: 1
-  address: 125 Summer Street, Boston, MA 02110
-  phone: unknown
-sb12:
-  id: 50
-  name: Starbucks
-  city_id: 1
-  address: 75-101 Federal Street, Boston, MA 02110
-  phone: unknown
-sb13:
-  id: 51
-  name: Starbucks
-  city_id: 1
-  address: 1 Financial Center, Boston, MA 02111
-  phone: unknown
-sb14:
-  id: 52
-  name: Starbucks
-  city_id: 1
+  longitude: "-71.0511"
+  city_id: "1"
   address: 2 Atlantic Avenue, Boston, MA 02110
-  phone: unknown
-sb15:
-  id: 53
+spots_41: 
   name: Starbucks
-  city_id: 1
+  latitude: "42.36"
+  id: "41"
+  phone: unknown
+  longitude: "-71.1421"
+  city_id: "1"
+  address: 27 School Street, Boston, MA 02106
+spots_30: 
+  name: McDonald's
+  latitude: "42.3979"
+  id: "30"
+  phone: unknown
+  longitude: "-71.064"
+  city_id: "1"
+  address: 128 BROADWAY, EVERETT, MA 02149
+spots_19: 
+  name: McDonald's
+  latitude: "42.3553"
+  id: "19"
+  phone: unknown
+  longitude: "-71.0632"
+  city_id: "1"
+  address: 146 TREMONT ST, BOSTON, MA 02111
+spots_5: 
+  name: Dunkin Donuts
+  latitude: "42.3605"
+  id: "5"
+  phone: 617-367-0041
+  longitude: "-71.0564"
+  city_id: "1"
+  address: 20 NORTH ST, BOSTON, MA
+spots_53: 
+  name: Starbucks
+  latitude: "42.3611"
+  id: "53"
+  phone: unknown
+  longitude: "-71.0664"
+  city_id: "1"
   address: 222 Cambridge Street, Boston, MA 02114
-  phone: unknown
-sb16:
-  id: 54
+spots_42: 
   name: Starbucks
-  city_id: 1
+  latitude: "42.3568"
+  id: "42"
+  phone: unknown
+  longitude: "-71.0566"
+  city_id: "1"
+  address: 1 Federal Street, Boston, MA 02110
+spots_31: 
+  name: McDonald's
+  latitude: "42.3316"
+  id: "31"
+  phone: unknown
+  longitude: "-71.0709"
+  city_id: "1"
+  address: 870 MASSACHUSETTS AVE, BOSTON, MA 02118
+spots_20: 
+  name: McDonald's
+  latitude: "42.3558"
+  id: "20"
+  phone: unknown
+  longitude: "-71.0602"
+  city_id: "1"
+  address: 417 WASHINGTON ST, BOSTON, MA 02110
+spots_6: 
+  name: Dunkin Donuts
+  latitude: "42.3591"
+  id: "6"
+  phone: 617-227-9790
+  longitude: "-71.058"
+  city_id: "1"
+  address: 100 City Hall Plaza, Boston, MA
+spots_54: 
+  name: Starbucks
+  latitude: "42.3523"
+  id: "54"
+  phone: unknown
+  longitude: "-71.0642"
+  city_id: "1"
   address: 62 Boylston Street, Boston, MA 02116
-  phone: unknown
-sb17:
-  id: 55
+spots_43: 
   name: Starbucks
-  city_id: 1
+  latitude: "42.3017"
+  id: "43"
+  phone: unknown
+  longitude: "-71.0771"
+  city_id: "1"
+  address: 240 Washington St., Boston, MA 02106
+spots_32: 
+  name: McDonald's
+  latitude: "42.3629"
+  id: "32"
+  phone: unknown
+  longitude: "-71.1377"
+  city_id: "1"
+  address: 360 WESTERN AVENUE, BRIGHTON, MA 02135-1011
+spots_21: 
+  name: McDonald's
+  latitude: "42.3507"
+  id: "21"
+  phone: unknown
+  longitude: "-71.0631"
+  city_id: "1"
+  address: 702 WASHINGTON ST, BOSTON, MA 02111
+spots_10: 
+  name: Dunkin Donuts
+  latitude: "42.2968"
+  id: "10"
+  phone: 617-338-4493
+  longitude: "-71.0723"
+  city_id: "1"
+  address: 426 Washington St, Boston, MA
+spots_7: 
+  name: Dunkin Donuts
+  latitude: "42.3565"
+  id: "7"
+  phone: 617-261-4699
+  longitude: "-71.0539"
+  city_id: "1"
+  address: 265 FRANKLIN ST, BOSTON, MA
+spots_55: 
+  name: Starbucks
+  latitude: "42.3483"
+  id: "55"
+  phone: unknown
+  longitude: "-71.041"
+  city_id: "1"
   address: 601 Congress St, Boston, MA 02210
-  phone: unknown
-sb18:
-  id: 56
+spots_44: 
   name: Starbucks
-  city_id: 1
+  latitude: "42.3598"
+  id: "44"
+  phone: unknown
+  longitude: "-71.0536"
+  city_id: "1"
+  address: 2-4 Faneuil Hall Market Place, Boston, MA 02101
+spots_33: 
+  name: McDonald's
+  latitude: "42.3385"
+  id: "33"
+  phone: unknown
+  longitude: "-71.1065"
+  city_id: "1"
+  address: 340-350 LONGWOOD AVE, BOSTON, MA 02115
+spots_22: 
+  name: McDonald's
+  latitude: "42.3606"
+  id: "22"
+  phone: unknown
+  longitude: "-71.0957"
+  city_id: "1"
+  address: 154 MASS AVE, BOSTON, MA 02215
+spots_11: 
+  name: Dunkin Donuts
+  latitude: "42.3555"
+  id: "11"
+  phone: 617-426-2817
+  longitude: "-71.0604"
+  city_id: "1"
+  address: 1 Summer St, Boston, MA
+spots_8: 
+  name: Dunkin Donuts
+  latitude: "42.3265"
+  id: "8"
+  phone: 617-426-8025
+  longitude: "-71.0826"
+  city_id: "1"
+  address: 10 Winthrop Sq, Boston, MA
+spots_56: 
+  name: Starbucks
+  latitude: "42.3827"
+  id: "56"
+  phone: unknown
+  longitude: "-71.0718"
+  city_id: "1"
   address: 1 Charles Street, Boston, MA 02108
-  phone: unknown
-sb19:
-  id: 57
+spots_45: 
   name: Starbucks
-  city_id: 1
+  latitude: "42.3562"
+  id: "45"
+  phone: unknown
+  longitude: "-71.0525"
+  city_id: "1"
+  address: 1 International Place, Boston, MA 02110
+spots_34: 
+  name: McDonald's
+  latitude: 
+  id: "34"
+  phone: unknown
+  longitude: 
+  city_id: "1"
+  address: 3850 MYSTIC VALLEY MALL, MEDFORD, MA 02155
+spots_23: 
+  name: McDonald's
+  latitude: "42.3604"
+  id: "23"
+  phone: unknown
+  longitude: "-71.0567"
+  city_id: "1"
+  address: ONE UNION STREET, BOSTON, MA 02108-2408
+spots_12: 
+  name: Dunkin Donuts
+  latitude: "42.3565"
+  id: "12"
+  phone: 617-482-4566
+  longitude: "-71.062"
+  city_id: "1"
+  address: 127 Tremont St, Boston, MA
+spots_9: 
+  name: Dunkin Donuts
+  latitude: "42.2971"
+  id: "9"
+  phone: 617-451-2106
+  longitude: "-71.0724"
+  city_id: "1"
+  address: 417 Washington St Suite M, Boston, MA
+spots_57: 
+  name: Starbucks
+  latitude: "42.3589"
+  id: "57"
+  phone: unknown
+  longitude: "-71.0707"
+  city_id: "1"
   address: 97 Charles Street, Boston, MA 02114
-  phone: unknown
-sb20:
-  id: 58
+spots_46: 
   name: Starbucks
-  city_id: 1
-  address: 143 Stuart Street, Boston, MA 02116
+  latitude: "42.3548"
+  id: "46"
   phone: unknown
+  longitude: "-71.0548"
+  city_id: "1"
+  address: 211 Congress Street, Boston, MA 02110
+spots_35: 
+  name: McDonald's
+  latitude: "42.3506"
+  id: "35"
+  phone: unknown
+  longitude: "-71.131"
+  city_id: "1"
+  address: 1223 COMMONWEALTH AVENUE, BOSTON, MA 02134
+spots_24: 
+  name: McDonald's
+  latitude: "42.3448"
+  id: "24"
+  phone: unknown
+  longitude: "-71.097"
+  city_id: "1"
+  address: 1282 BOYLSTON ST, BOSTON, MA 02215
+spots_13: 
+  name: Dunkin Donuts
+  latitude: "42.3591"
+  id: "13"
+  phone: 617-523-4443
+  longitude: "-71.1229"
+  city_id: "1"
+  address: 100 Cambridge St, Boston, MA
+spots_58: 
+  name: Starbucks
+  latitude: "42.3511"
+  id: "58"
+  phone: unknown
+  longitude: "-71.0662"
+  city_id: "1"
+  address: 143 Stuart Street, Boston, MA 02116
+spots_47: 
+  name: Starbucks
+  latitude: "42.3598"
+  id: "47"
+  phone: unknown
+  longitude: "-71.051"
+  city_id: "1"
+  address: 296 State St, Boston, MA 02109
+spots_36: 
+  name: McDonald's
+  latitude: "42.2359"
+  id: "36"
+  phone: unknown
+  longitude: "-71.1511"
+  city_id: "1"
+  address: 178 BORDER ST, EAST BOSTON, MA 02128
+spots_25: 
+  name: McDonald's
+  latitude: "42.3488"
+  id: "25"
+  phone: unknown
+  longitude: "-71.096"
+  city_id: "1"
+  address: 540 COMMONWEALTH AVE, BOSTON, MA 02215
+spots_14: 
+  name: Dunkin Donuts
+  latitude: "42.3581"
+  id: "14"
+  phone: 617-248-8875
+  longitude: "-71.0502"
+  city_id: "1"
+  address: 70 E India Row, Boston, MA
+spots_48: 
+  name: Starbucks
+  latitude: "42.3557"
+  id: "48"
+  phone: unknown
+  longitude: "-71.0608"
+  city_id: "1"
+  address: 12 Winter Street, Boston, MA 02106
+spots_37: 
+  name: McDonald's
+  latitude: "42.3949"
+  id: "37"
+  phone: unknown
+  longitude: "-71.1216"
+  city_id: "1"
+  address: 234 ELM ST, SOMERVILLE, MA 02144
+spots_26: 
+  name: McDonald's
+  latitude: "42.3515"
+  id: "26"
+  phone: unknown
+  longitude: "-71.1185"
+  city_id: "1"
+  address: 949 COMMONWEALTH AVE, BOSTON, MA 02215
+spots_15: 
+  name: Dunkin Donuts
+  latitude: "42.3578"
+  id: "15"
+  phone: 617-227-0565
+  longitude: "-71.0631"
+  city_id: "1"
+  address: 22 BEACON ST, BOSTON, MA
+spots_1: 
+  name: Dunkin Donuts
+  latitude: "42.3017"
+  id: "1"
+  phone: 617-248-1987
+  longitude: "-71.0772"
+  city_id: "1"
+  address: 235 Washington St, Boston, MA
+spots_49: 
+  name: Starbucks
+  latitude: "42.3534"
+  id: "49"
+  phone: unknown
+  longitude: "-71.0576"
+  city_id: "1"
+  address: 125 Summer Street, Boston, MA 02110
+spots_38: 
+  name: McDonald's
+  latitude: "42.3207"
+  id: "38"
+  phone: unknown
+  longitude: "-71.0818"
+  city_id: "1"
+  address: 301 WARREN ST, ROXBURY, MA 02119
+spots_27: 
+  name: McDonald's
+  latitude: "42.2876"
+  id: "27"
+  phone: unknown
+  longitude: "-71.1301"
+  city_id: "1"
+  address: 2 S STATION, BOSTON, MA 02110
+spots_16: 
+  name: McDonald's
+  latitude: 
+  id: "16"
+  phone: unknown
+  longitude: 
+  city_id: "1"
+  address: 14 MC GRATH HWY, SOMERVILLE, MA 02143
+spots_2: 
+  name: Dunkin Donuts
+  latitude: "42.3576"
+  id: "2"
+  phone: 617-451-1058
+  longitude: "-71.0564"
+  city_id: "1"
+  address: 3 Post Office Square, Boston, MA
+spots_50: 
+  name: Starbucks
+  latitude: "42.3555"
+  id: "50"
+  phone: unknown
+  longitude: "-71.0564"
+  city_id: "1"
+  address: 75-101 Federal Street, Boston, MA 02110
+spots_39: 
+  name: Starbucks
+  latitude: "42.3592"
+  id: "39"
+  phone: unknown
+  longitude: "-71.0591"
+  city_id: "1"
+  address: 63-65 Court Street, Boston, MA 02108
+spots_28: 
+  name: McDonald's
+  latitude: "42.3508"
+  id: "28"
+  phone: unknown
+  longitude: "-71.0564"
+  city_id: "1"
+  address: 700 ATLANTIC AVE, BOSTON, MA 02111
+spots_17: 
+  name: McDonald's
+  latitude: "42.3637"
+  id: "17"
+  phone: unknown
+  longitude: "-71.1009"
+  city_id: "1"
+  address: 463 MASSACHUSETTS AVE, CAMBRIDGE, MA 02139
+spots_3: 
+  name: Dunkin Donuts
+  latitude: "42.3591"
+  id: "3"
+  phone: 617-523-1451
+  longitude: "-71.0551"
+  city_id: "1"
+  address: 111 State Street, Boston, MA
+spots_51: 
+  name: Starbucks
+  latitude: "42.3526"
+  id: "51"
+  phone: unknown
+  longitude: "-71.0562"
+  city_id: "1"
+  address: 1 Financial Center, Boston, MA 02111
+spots_40: 
+  name: Starbucks
+  latitude: "42.3591"
+  id: "40"
+  phone: unknown
+  longitude: "-71.0556"
+  city_id: "1"
+  address: 84 State Street, Boston, MA 02109
+spots_29: 
+  name: McDonald's
+  latitude: 
+  id: "29"
+  phone: unknown
+  longitude: 
+  city_id: "1"
+  address: WASHINGTON ST RELOCATION, BOSTON, MA 02108
+spots_18: 
+  name: McDonald's
+  latitude: "42.3648"
+  id: "18"
+  phone: unknown
+  longitude: "-71.0534"
+  city_id: "1"
+  address: ONE FLEET CENTER, BOSTON, MA 02114
+spots_4: 
+  name: Dunkin Donuts
+  latitude: "42.3594"
+  id: "4"
+  phone: 617-720-4501
+  longitude: "-71.058"
+  city_id: "1"
+  address: 2 City Hall Sq, Boston, MA

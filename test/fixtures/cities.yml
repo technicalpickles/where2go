@@ -1,11 +1,13 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-boston:
-  id: 1
+--- 
+cities_1: 
   name: Boston
+  latitude: "42.3587"
+  id: "1"
   description: Boston, Massachusetts
-  latitude: 42.358734189177426
-  longitude: -71.05725288391113
-newyork:
-  id: 2
+  longitude: "-71.0573"
+cities_2: 
   name: New York
+  latitude: 
+  id: "2"
   description: New York City
+  longitude: 

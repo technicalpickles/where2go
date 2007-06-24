@@ -1,6 +1,5 @@
 
 class CitiesController < ApplicationController
-
   include GeoKit::Geocoders
 
   def title_prefix
@@ -22,29 +21,21 @@ class CitiesController < ApplicationController
 
   def show
     if params[:name]
-      name = params[:name].sub '_', ' ' 
-      name.capitalize!
-      @city = City.find_by_name name
+      @city = City.find_by_normalized_name params[:name]
     elsif params[:id]
       @city = City.find(params[:id])
     end
 
-    @map = GMap.new("map_div")
-    @map.control_init(:large_map => true,:map_type => true)
-
-    city_loc = lookup_location @city.name
-    if city_loc.success
-      @map.center_zoom_init [city_loc.lat, city_loc.lng], 12
+    @markers = @city.spots.collect do |spot|
+      spot.to_marker
     end
 
-    @city.spots.each do |spot|
-      spot_loc = lookup_location spot.address
-      marker = GMarker.new [spot_loc.lat, spot_loc.lng],
-        :title => spot.name,
-        :info_window => "Info! Info!"
+    build_map
+  end
 
-      @map.overlay_init marker
-    end
+  def show_by_distance
+      @city = City.find(params[:id])
+
   end
 
   def new
@@ -83,6 +74,20 @@ class CitiesController < ApplicationController
   private
   def lookup_location address
     GoogleGeocoder.geocode address
+  end
+
+  def build_map
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+
+    city_loc = lookup_location @city.name
+    if city_loc.success
+      @map.center_zoom_init [city_loc.lat, city_loc.lng], 12
+    end
+
+    @markers.each do |marker|
+      @map.overlay_init marker
+    end
   end
 
 end

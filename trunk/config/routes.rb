@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/service.wsdl', :action => 'wsdl'
 
   map.city 'city/:name', :controller => 'cities', :action => 'show'
+  map.spot 'city/:city/spot/:spot', :controller => 'spots', :action => 'show'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id.:format'
   map.connect ':controller/:action/:id'

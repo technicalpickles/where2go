@@ -1,7 +1,14 @@
 class City < ActiveRecord::Base
+  include GeoKit::Geocoders
+
   validates_presence_of :name
   has_many :spots
   acts_as_mappable
+
+  def origin
+    loc = GoogleGeocoder.geocode self.name
+    [loc.lat, loc.lng]
+  end
 
   def self.spots_within distance
     self.find :all, :origin => self.address, :conditions => "distance #{distance}"

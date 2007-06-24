@@ -88,7 +88,7 @@ a:hover {
 
 <p class="footer">
 <%= link_to 'Edit', :action => 'edit', :id => @spot %> |
-<%= link_to 'Back', :action => 'list' %>
+<%= link_to 'Back', city_url(:name => @spot.city.normalized_name) %>
 </p>
 
 </div> <!-- end wrapper -->

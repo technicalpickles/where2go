@@ -40,9 +40,15 @@ class CitiesController < ApplicationController
       end
       @city = City.find_by_normalized_name params[:city]
 
-      spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
+      @conditions = "distance < #{params[:distance]}";
 
-      @markers = collect_markers spots
+      if params[:namefragment]
+        @conditions += " AND name LIKE '%#{params[:namefragment]}%'";
+      end
+
+      @spots = Spot.find :all, :origin => @origin, :conditions => @conditions
+
+      @markers = collect_markers @spots
       build_map
 
       respond_to do |wants|
@@ -99,7 +105,14 @@ class CitiesController < ApplicationController
     end
     @city = City.find_by_normalized_name params[:city]
 
-    @spots = Spot.find :all, :origin => @origin, :conditions => "distance < #{params[:distance]}"
+    @conditions = "distance < #{params[:distance]}";
+
+    if params[:namefragment]
+      @conditions += " AND name LIKE '%#{params[:namefragment]}%'";
+    end
+
+    @spots = Spot.find :all, :origin => @origin, :conditions => @conditions
+
   end
 
   private

@@ -221,3 +221,25 @@ Processing SpotsController#show (for 127.0.0.1 at 2007-06-24 12:29:50) [GET]
 Rendering  within layouts/spots
 Rendering spots/show
 Completed in 0.01049 (95 reqs/sec) | Rendering: 0.00413 (39%) | DB: 0.00146 (13%) | 200 OK [http://localhost/spots/show/1]
+
+
+Processing CitiesController#list (for 127.0.0.1 at 2007-06-24 12:36:29) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"list", "controller"=>"cities"}
+  [4;35;1mCity Columns (0.000745)[0m   [0mSHOW FIELDS FROM cities[0m
+  [4;36;1mSQL (0.000315)[0m   [0;1mSELECT count(*) AS count_all FROM cities [0m
+  [4;35;1mCity Load (0.000124)[0m   [0mSELECT * FROM cities LIMIT 0, 10[0m
+Rendering  within layouts/cities
+Rendering cities/list
+Completed in 0.01245 (80 reqs/sec) | Rendering: 0.00443 (35%) | DB: 0.00118 (9%) | 200 OK [http://localhost/cities/list]
+
+
+Processing CitiesController#list (for 127.0.0.1 at 2007-06-24 12:36:59) [GET]
+  Session ID: 645d755a880983dca9d12790e9e10a33
+  Parameters: {"action"=>"list", "controller"=>"cities"}
+  [4;36;1mCity Columns (0.000752)[0m   [0;1mSHOW FIELDS FROM cities[0m
+  [4;35;1mSQL (0.000328)[0m   [0mSELECT count(*) AS count_all FROM cities [0m
+  [4;36;1mCity Load (0.000125)[0m   [0;1mSELECT * FROM cities LIMIT 0, 10[0m
+Rendering  within layouts/cities
+Rendering cities/list
+Completed in 0.01236 (80 reqs/sec) | Rendering: 0.00440 (35%) | DB: 0.00121 (9%) | 200 OK [http://localhost/cities/list]

@@ -26,16 +26,19 @@ class CitiesController < ApplicationController
       @city = City.find(params[:id])
     end
 
-    @markers = @city.spots.collect do |spot|
-      spot.to_marker
-    end
+    @markers = collect_markers @city.spots
 
     build_map
   end
 
-  def show_by_distance
-      @city = City.find(params[:id])
+  def spots_by_distance
+      @city = City.find_by_normalized_name params[:city]
+      @spots = Spot.find :all, :origin => @city.name, :conditions => "distance < #{params[:distance]}"
 
+      @markers = collect_markers @spots
+      build_map
+
+      render :action => :show
   end
 
   def new
@@ -72,6 +75,12 @@ class CitiesController < ApplicationController
   end
 
   private
+  def collect_markers spots
+    @markers = spots.collect do |spot|
+      spot.to_marker
+    end
+  end
+
   def lookup_location address
     GoogleGeocoder.geocode address
   end

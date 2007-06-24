@@ -3,6 +3,10 @@ class City < ActiveRecord::Base
   has_many :spots
   acts_as_mappable
 
+  def self.spots_within distance
+    self.find :all, :origin => self.address, :conditions => "distance #{distance}"
+  end
+
   def normalized_name
     name = self.name
     name.sub! ' ', '_'

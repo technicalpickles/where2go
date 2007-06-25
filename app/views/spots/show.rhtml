@@ -1,104 +1,36 @@
-<% content_for :head do %>
-  <%= @map.to_html %>
-  
-<style type="text/css">
-body {
-  background-color: #ffffff;
-  color: #000;
-}
-.wrapper {
-  margin: 1% 5%;
-  padding: 0;
-  border: thin solid #000000;
-}
-h1 {
-  background-color: #111111;
-  color: #ffffff;
-  margin: 0;
-  padding: .2em 2%;
-}
-h2 {
-  margin: .2em 0;
-}
-.main {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-top: thin solid #000000;
-}
-.content {
-  width: 50%;        
-  float: left;        
-  margin: 0;
-  padding: 1% 2%;
-}
-.map {
-  margin-left: 50%;
-  margin-right: 0px;
-  padding: 1%;
-  font-size: 90%;
-  border: thin solid #000000;
-}
-.clear {
-  clear: both;   
-  height: 1px;
-  overflow: hidden;  
-  margin: 0;        
-}
-.footer {
-  background-color: #111111; 
-  color: #ffffff;
-  margin: 0;
-  padding: 1% 2%;
-}
-.map ul {
-  margin-left: 1em;
-  padding-left: 0;
-}
-a:link {
-  color: #999999;
-  background-color: transparent;
-}
-a:hover {
-  color: #999999;
-  background-color: transparent;
-}
-}
-</style>
-
-<% end %>
-
-
-<body>
 <div class="wrapper">
-<h1><%=h @spot.send('name') %></h1>
-<div class="main">
+  <h1><%=h @spot.send('name') %></h1>
 
-<div class="content">
-<h2>Address:</h2> <b><%=h @spot.send('address') %></b><br>
-<form action="http://maps.google.com/maps" method="get" target="_blank">
-<p><label for="saddr">Get directions from:</label>
-<input type="text" name="saddr" id="saddr" value="" />
-<input type="submit" value="Go" />
-<input type="hidden" name="daddr" value='<%=h @spot.send('address') %>' />
-<input type="hidden" name="hl" value="en" /></p>
-</form>
-<p>
-<h2>Phone:</h2> <%=h @spot.send('phone') %>
-</div>
+  <div class="main">
+    <div class="content">
+      <h2>address:</h2>
+      <b><%=h @spot.send('address') %></b><br />
 
-<div class="map" id="map" style=height:225px"/>
+      <form action="http://maps.google.com/maps" method="get" target="_blank">
+        <p>
+          <label for="saddr">get directions from:</label>
+          <input type="text" name="saddr" id="saddr" value="" />
 
-<!-- need a non-floating element to properly calculate container height -->
-<div class="clear"></div>
-</div> <!-- end main -->
+          <input type="hidden" name="daddr" value='<%=h @spot.send('address') %>' />
+          <input type="hidden" name="hl" value="en" />
+          
+          <input type="submit" value="go" />
+        </p>
 
-<p class="footer">
-<%= link_to 'Edit', :action => 'edit', :id => @spot %> |
-<%= link_to 'Back', city_url(:name => @spot.city.normalized_name) %>
-</p>
+      </form>
+
+      <h2>phone:</h2> <%=h @spot.send('phone') %>
+    </div>
+
+    <div class="map" id="map" style="height:225px"/>
+
+    <!-- need a non-floating element to properly calculate container height -->
+    <div class="clear"></div>
+  </div> <!-- end main -->
+
+  <p class="footer">
+    <%= link_to 'edit', :action => 'edit', :id => @spot %> |
+    <%= link_to 'back', city_url(:name => @spot.city.normalized_name) %>
+  </p>
 
 </div> <!-- end wrapper -->
-</body>
-</html>
-

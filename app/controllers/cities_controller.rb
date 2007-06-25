@@ -2,10 +2,6 @@
 class CitiesController < ApplicationController
   include GeoKit::Geocoders
 
-  def title_prefix
-    "City"
-  end
-
   def index
     list
     render :action => 'list'

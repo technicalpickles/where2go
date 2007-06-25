@@ -1,8 +1,4 @@
 class SpotsController < ApplicationController
-  def title_prefix
-    "Spots"
-  end
-
   def index
     list
     render :action => 'list'
@@ -55,14 +51,16 @@ class SpotsController < ApplicationController
     redirect_to :action => 'list'
   end
   
+  private
+
   def build_map
     @map = GMap.new("map")
-    @map.control_init()
+    @map.control_init
     loc = @spot.location
     @map.center_zoom_init [loc.lat, loc.lng], 15
     @map.overlay_init @spot.to_no_info_marker
     @map.interface_init(
-          :dragging => false, 
+          :dragging => true, 
           :info_window => false,
           :double_click_zoom => false, 
           :continuous_zoom => false)

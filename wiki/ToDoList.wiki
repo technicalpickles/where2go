@@ -1,5 +1,9 @@
-
 Please try to categorize todo-items.
+
+= New Features =
+
+  * Tagging / categories
+    * When showing spots, show other spots in a short radius with the same tags
 
 = Data Initialization =
 

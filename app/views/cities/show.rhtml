@@ -3,111 +3,115 @@
 
 
 <style type="text/css">
-body {
-  background-color: #ffffff;
-  color: #000;
-}
-.wrapper {
-  margin: 1% 5%;
-  padding: 0;
-  border: thin solid #000000;
-}
-h1 {
-  background-color: #111111;
-  color: #ffffff;
-  margin: 0;
-  padding: .2em 2%;
-}
-h2 {
-  margin: .2em 0;
-}
-.main {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-top: thin solid #000000;
-}
-.filter {
-  width: 25%;        
-  height: 400px;
-  float: left;        
-  margin: 0;
-  padding: 1% 2%;
-  border: thin solid #000000;
-}
-.map {
-  margin-left: 25%;
-  margin-right: 0px;
-  padding: 1%;
-  font-size: 90%;
-  border: thin solid #000000;
-}
-.clear {
-  clear: both;   
-  height: 1px;
-  overflow: hidden;  
-  margin: 0;        
-}
-.footer {
-  background-color: #111111; 
-  color: #ffffff;
-  margin: 0;
-  padding: 1% 2%;
-}
-.map ul {
-  margin-left: 1em;
-  padding-left: 0;
-}
-a:link {
-  color: #999999;
-  background-color: transparent;
-}
-a:hover {
-  color: #999999;
-  background-color: transparent;
-}
-}
-</style>
-
+  body {
+    background-color: #ffffff;
+    color: #000;
+  }
+  .wrapper {
+    margin: 1% 5%;
+    padding: 0;
+    border: thin solid #000000;
+  }
+  h1 {
+    background-color: #111111;
+    color: #ffffff;
+    margin: 0;
+    padding: .2em 2%;
+  }
+  h2 {
+    margin: .2em 0;
+  }
+  .main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: thin solid #000000;
+  }
+  .filter {
+    width: 25%;        
+    height: 400px;
+    float: left;        
+    margin: 0;
+    padding: 1% 2%;
+    border: thin solid #000000;
+  }
+  .map {
+    margin-left: 25%;
+      margin-right: 0px;
+      padding: 1%;
+      font-size: 90%;
+      border: thin solid #000000;
+    }
+    .clear {
+      clear: both;   
+      height: 1px;
+      overflow: hidden;  
+      margin: 0;        
+    }
+    .footer {
+      background-color: #111111; 
+      color: #ffffff;
+      margin: 0;
+      padding: 1% 2%;
+    }
+    .map ul {
+      margin-left: 1em;
+      padding-left: 0;
+    }
+    a:link {
+      color: #999999;
+      background-color: transparent;
+    }
+    a:hover {
+      color: #999999;
+      background-color: transparent;
+    }
+  </style>
 <% end %>
 
-<body>
+  <body>
 
-<div class="wrapper">
-<h1><%= link_to "All Cities", :action => 'list'%> &raquo; <%= @city.name if @city %></h1>
-<div class="main">
+    <div class="wrapper">
+      <h1><%= link_to "All Cities", :action => 'list'%> &raquo; <%= @city.name if @city %></h1>
+      <div class="main">
 
-<div class="filter">
-<% form_tag :action=>"spots_by_distance" do -%>
-Radius:
-<%= text_field_tag :distance, params[:distance], {:size => 2} %>
-<br/>
-Name:
-<%= text_field_tag :namefragment, params[:namefragment], {:size => 8} %>
-<br/>
-<%= hidden_field_tag :city, @city.name %>
-<%= submit_tag "Search" %>
-<% end -%>
-</div>
+      <div class="filter">
+        <% form_tag :action=>"spots_by_distance" do -%>
+          <%= hidden_field_tag :city, @city.name %>
 
-<div class="map" id="map_div" style=height:400px"/>
+          <label for="distance">Radius:</label>
+          <%= text_field_tag :distance, params[:distance], {:size => 2} %>
+          <br/>
 
-</div> <!-- end wrapper -->
+          <label for="namefragment">Name:</label>
+          <%= text_field_tag :namefragment, params[:namefragment], {:size => 8} %>
+          <br/>
 
-<h3>Spots</h3>
 
-<ol>
-  <% @spots.each do |spot| %>
-    <li><%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> located at <%= spot.address %> [ <%= spot.latitude %>, <%= spot.longitude %>]</li>
-  <% end %>
+          <%= submit_tag "Search" %>
+        <% end -%>
+      </div>
 
-</ol>
+      <div class="map" id="map_div" style=height:400px"/>
 
-<p class="footer">
-<%= link_to 'Edit', :action => 'edit', :id => @city %> |
-<%= link_to 'Back', :action => 'list' %>
-</p>
-</body>
+    </div> <!-- end wrapper -->
+
+    <h3>Spots</h3>
+
+    <ol>
+      <% @spots.each do |spot| %>
+        <li>
+          <%= link_to spot.name, spot_url(:city => spot.city.normalized_name, :id => spot) %> 
+          located at <%= spot.address %> 
+          [ <%= spot.latitude %>, <%= spot.longitude %>]</li>
+      <% end %>
+    </ol>
+
+    <p class="footer">
+      <%= link_to 'Edit', :action => 'edit', :id => @city %> |
+      <%= link_to 'Back', :action => 'list' %>
+    </p>
+  </body>
 </html>
 
 

@@ -1,5 +1,9 @@
 Please try to categorize todo-items.
 
+= Tests =
+
+Yes, please.
+
 = New Features =
 
   * Tagging / categories

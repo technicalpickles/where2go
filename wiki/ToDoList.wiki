@@ -1,0 +1,6 @@
+
+Please try to categorize todo-items.
+
+= Data Initialization =
+
+  * For Spots, be able to initialize latitude and longitude by doing a geocode lookup

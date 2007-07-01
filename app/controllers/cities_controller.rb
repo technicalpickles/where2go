@@ -108,7 +108,7 @@ class CitiesController < ApplicationController
       @conditions += " AND name LIKE '%#{params[:namefragment]}%'";
     end
 
-    @spots = Spot.find :all, :origin => @origin, :conditions => @conditions
+    @spots = @city.spots.find :all, :origin => @origin, :conditions => @conditions
 
   end
 

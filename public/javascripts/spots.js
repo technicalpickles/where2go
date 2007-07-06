@@ -44,7 +44,15 @@ var Spots = {
     spot.seqnum = Spots.allSpots.length;
   },
 
-  update: function() {
+  process_json_spots: function(json_spots) {
+    Spots.allSpots = [];
+    json_spots.each(function(json_spot) {
+      spot = new Spot(json_spot);
+      Spots.addSpot(spot);
+    });
+  },
+
+  refresh: function() {
     Spots.map.clearOverlays();
     Spots.setupHubMarker();
 
@@ -53,10 +61,11 @@ var Spots = {
     } else {
       $("resultsbody").remove();
       $("results").appendChild(Builder.node("tbody", {id: "resultsbody"}));
-      var seqnum = 0;
+      var seqnum = 1;
       var ordered = Spots.allSpots.sortBy(Spots.sortFunc);
 
       ordered.each( function(spot) {
+                      spot.seqnum = seqnum++;
                       spot.addToMap(Spots.map);
                       spot.addToResults();
                     } );
@@ -66,7 +75,7 @@ var Spots = {
 
   findSpotByExternalID: function(id) {
     var item = Spots.allSpots.find( function(spot) {
-                                           return spot.externalid == id;
+                                           return spot.id == id;
                                          } );
     return item;
   },
@@ -120,7 +129,7 @@ var Spots = {
 
     $("sortcolumn").value = newmethod;
     $("sortdirection").value = newdirection;
-    Spots.update();
+    Spots.refresh();
     $("sortingindicator").setStyle({display: "none"});
   },
 
@@ -145,24 +154,23 @@ var Spots = {
     Spots.map.addOverlay(Spots.hubMarker);
   },
 
-  rehubPoint: function(point, update) {
+  rehubPoint: function(point, should_refresh) {
     Spots.setNewHub(point);
     Spots.map.setCenter(Spots.hubpoint);
-    Spots.map.openInfoWindow(Spots.map.getCenter(), document.createTextNode($("hubaddress").value));
 
-    if (update) {
+    if (should_refresh) {
       $("resultsbody").innerHTML = "<tr><td colspan='9'>Loading..</td></tr>";
       new Ajax.Request('queryjs', {asynchronous:true, evalScripts:true, parameters:Form.serialize($("mainform"))});
       //$("mainform").submit();
     }
   },
 
-  rehub: function(address, update) {
+  rehub: function(address, should_refresh) {
     if (address == "") { var address = $("hubaddress").value; }
     var pointPerhaps = Spots.toGLatLng(address);
     if (pointPerhaps) {
       // it was already a point, so just use that
-      Spots.rehubPoint(pointPerhaps, update);
+      Spots.rehubPoint(pointPerhaps, should_refresh);
     } else {
       // look up what ought to be an address
       Spots.geocoder.getLatLng(
@@ -171,7 +179,7 @@ var Spots = {
           if (!point) {
             alert(address + " not found");
           } else {
-            Spots.rehubPoint(point, update);
+            Spots.rehubPoint(point, should_refresh);
           }
         }
       );
@@ -273,9 +281,16 @@ var Spots = {
 
 var Spot = Class.create();
 Spot.prototype = {
-  initialize: function(dbid, externalid, name, address, phone, opensat, closesat, link, spottype, description, distance, latitude, longitude) {
+  initialize: function(json) {
+    for(property in json.attributes) {
+      var value = json.attributes[property];
+      this[property] = value;
+    }
+  },
+/*
+  initialize: function(dbid, id, name, address, phone, opensat, closesat, link, spottype, description, distance, latitude, longitude) {
     this.dbid = dbid;
-    this.externalid = externalid;
+    this.id = id;
     this.name = name;
     this.address = address;
     this.phone = phone;
@@ -292,6 +307,7 @@ Spot.prototype = {
 
     Spots.addSpot(this);
   },
+  */
 
   addToMap: function(map) {
     map.addOverlay(this.getMarker());
@@ -362,7 +378,10 @@ Spot.prototype = {
                             {className: "markercode marker_"+this.typecode,
                              onclick: "return Spots.showBubble("+this.seqnum+");return false"},
                             this.seqnum);
-    var link = Builder.node("a", {href: this.link, target: "_blank", title:this.address + " - " + this.phone}, this.name);
+    var link = this.name;
+    if (this.link != null) {
+      link = Builder.node("a", {href: this.link, target: "_blank", title:this.address + " - " + this.phone}, this.name);
+    }
     var name = Builder.node("td", {className: "name"}, [link]);
     var distance = Builder.node("td", {className: "distance"}, this.distance);
 //    var opensat = Builder.node("td", {className: "opensat"}, this.opensat);

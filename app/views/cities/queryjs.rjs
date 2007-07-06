@@ -1,7 +1,2 @@
-page.assign "Spots.allSpots", []
-
-for spot in @spots
-  page.call "new Spot", spot.id, spot.id, spot.name, spot.address, spot.phone, "11:00", "1:00", "http://greenstreetgrill.com/", "R", "This "+spot.name+" is at "+spot.address, 0.1, spot.latitude, spot.longitude
-end
-
+page.call "Spots.process_json_spots", @spots
 page.call "Spots.update"

@@ -107,3 +107,7 @@ GeoKit::Geocoders::geocoder_ca = false
 # various geocoders.  Make sure you read up on relevant Terms of Use for each
 # geocoder you are going to use.
 GeoKit::Geocoders::provider_order = [:google,:us]
+
+
+# Don't do debug stuff in for RJS. We'll use Firebug instead
+ActionView::Base.debug_rjs = false
